@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>店铺优惠券</title>
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="www/css/mp-common.css">
+    <link rel="stylesheet" href="script/common/jquery.date.css">
+    <link rel="stylesheet" href="www/css/store-coupons-list.css">
+</head>
+<body>
+    <aside></aside>
+    <header></header>
+    <div class="main-box form-inline" id="mainBox">
+        <div class="main-content" id="mainContent">
+            <div class="content-title">店铺优惠券列表</div>
+            <div class="content-box">
+                <div class="search-box" id="searchBox"></div>
+                <!--list box start-->
+                <div class="list-box" id="listBox">
+                    <ul class="list-head"></ul>
+                    <ul class="list-content" id="listContent"></ul>
+
+                </div>
+                <!--list box end-->
+
+                <!--pager start-->
+                <div class="page-nav" id="pageNav"></div>
+                <!--pager end-->
+            </div>
+
+        </div>
+    </div>
+    <script data-main="script/store-coupons/list-app" src="lib/requirejs/require.js"></script>
+</body>
+</html>

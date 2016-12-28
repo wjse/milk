@@ -1,0 +1,54 @@
+body {
+  margin-left: 100px;
+  width: expression(document.body.offsetWidth - 100 + "px");
+  font-family: "microsoft yahei";
+}
+aside {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  background-color: #344652;
+  .back {
+    text-align: center;
+    line-height: 100px;
+    background-color: #3ac0c3;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    a {
+      display: block;
+      img {
+        vertical-align: middle;
+      }
+    }
+  }
+  li.li-module {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    a {
+      width: 100%;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+  li.li-module.active{
+    box-shadow: 0 0 5px #444 inset;
+    background-color: #1D2B36;
+  }
+}
+header .header-box {
+  height: 100px;
+  background-color: #FFF;
+  overflow: hidden;
+  p{
+    line-height: 100px;
+    font-size: 2.5em;
+  }
+}

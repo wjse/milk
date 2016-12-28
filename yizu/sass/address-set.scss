@@ -1,0 +1,124 @@
+@import "plug/address";
+
+$bgColor: #EEE;
+
+$fontFamily: "黑体";
+
+$maxWidth: 500px;
+$fontStack: 14px;
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  max-width: $maxWidth;
+  background-color: $bgColor;
+  font-size: $fontStack;
+  font-family: $fontFamily;
+}
+
+.address-page {
+  padding-bottom: 50px;
+  .option {
+    position: absolute;
+  }
+}
+
+.address-form form {
+  background-color: #FFF;
+
+  $groupPaddingLeft: 15px;
+  $groupPaddingTop: 10px;
+
+  .group:not(:last-child) {
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+  }
+
+  .group {
+    position: relative;
+    padding: $groupPaddingTop $groupPaddingLeft;
+    width: 100%;
+    font-size: 1.1em;
+    box-sizing: border-box;
+    input,textarea {
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      resize: none;
+      font-family: $fontFamily;
+      &::-moz-placeholder {
+        color: #CCC;
+      }
+      &::-webkit-input-placeholder {
+        color: #CCC;
+      }
+      &:-ms-input-placeholder {
+        color: #CCC;
+      }
+    }
+
+    .street {
+      &:after {
+        content: '';
+        position: absolute;
+        top: (  2 * $groupPaddingTop - 14px + $fontStack * 1.1 )/2;
+        right: $groupPaddingLeft;
+        width: 10px;
+        height: 14px;
+        background: url("../image/yizu-icon.svg") 400-370px 360-140px;
+      }
+    }
+  }
+}
+
+
+.address-list ul {
+  li + div {
+    padding: 15px;
+    text-align: right;
+    @import "plug/yizu-style";
+  }
+}
+
+.select {
+  position: relative;
+  padding: 10px 5px;
+  width: 100%;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-sizing: border-box;
+  .sel-area {
+    float: left;
+    padding: 5px 10px;
+    width: 33.33%;
+    height: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: scroll;
+    &::-webkit-scrollbar {
+      width: 0px;
+    }
+    ul {
+      position: relative;
+      overflow: scroll;
+      li {
+        position: relative;
+        padding: 2px 5px;
+        height: 36px;
+        line-height: 36px;
+        overflow: hidden;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 1.1em;
+      }
+      li.active {
+        border: 1px solid $yelloColor;
+        color: $yelloColor;
+      }
+    }
+  }
+}

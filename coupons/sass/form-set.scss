@@ -1,0 +1,163 @@
+@import "normal";
+@import "color";
+.content-title{
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  padding-left: 4px;
+  border-left: 4px solid $color;
+}
+.form-box{
+  .form-title{
+    padding-left: 24px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .form-item {
+    font-size: 12px;
+    margin-bottom: 18px;
+    .form-head {
+      width: 100px;
+      float: left;
+      color: rgba(0, 0, 0, 0.89);
+      text-align: right;
+      .red-star{
+        color: #ff0000;
+      }
+    }
+    .form-content {
+      width: 80%;
+      min-width: 958px;
+      padding-left: 20px;
+      color: rgba(0, 0, 0, 0.5);
+      float: left;
+      .item-tip{
+        float: left;
+        margin-left: 10px;
+      }
+      .choose-item-box{
+        color: $color;
+      }
+      .select-set{
+        width: 90px;
+        background-color: #e7e7e7;
+        border: 1px solid $borderColor;
+        @include borderRadius(2px);
+      }
+
+      .btn-set{
+        @include btnSet(90px,20px,#e7e7e7,rgba(0,0,0,0.89),12px,#d6d7dc);
+        @include borderRadius(2px);
+      }
+
+      .checkbox-inline:first-child{
+        padding-left: 0px;
+      }
+
+      .checkbox-inline:nth-child(2n){
+        padding-left: 10px;
+      }
+      .goods-upload-box{
+        padding: 10px;
+        background-color: #f8f8f8;
+        border: 1px solid $borderColor;
+        .thumb-img-box{
+          background-color: white;
+          width: 98px;
+          height: 98px;
+          border: 1px solid $borderColor;
+          margin-bottom: 10px;
+          overflow: hidden;
+          .thumb-img{
+            width: 100%;
+          }
+        }
+        .thumb-img-upload{
+          @include btnSet(100px,20px,#e7e7e7,rgba(0,0,0,0.89),12px,#d6d7dc);
+          @include borderRadius(2px);
+        }
+        .ajax-upload-dragdrop{
+          width: 100px;
+          padding: 0px;
+          border: none;
+          .ajax-file-upload{
+            height: 20px;
+            line-height: 10px;
+            background-color: #e7e7e7;
+            margin: 0px;
+            padding: 4px 24px;
+            font-size: 12px;
+            font-weight: normal;
+            border: 1px solid #d6d7dc;
+            @include borderRadius(2px);
+            box-shadow: none;
+            color: rgba(0,0,0,0.89);
+          }
+        }
+      }
+
+      //goodsInfo
+      .big-input-set{
+        @include borderRadius(2px);
+        @include input-width(500px);
+        border: 1px solid #d6d7dc;
+      }
+      .middle-input-set{
+        @include borderRadius(2px);
+        @include input-width(300px);
+        border: 1px solid #d6d7dc;
+      }
+      .small-input-set{
+        @include borderRadius(2px);
+        @include input-width(138px);
+        border: 1px solid #d6d7dc;
+      }
+      .xs-input-set{
+        @include borderRadius(2px);
+        @include input-width(60px);
+        border: 1px solid #d6d7dc;
+      }
+      .sale-hot{
+        @include input-width(500px);
+        @include borderRadius(2px);
+        height: 50px;
+        border: 1px solid $borderColor;
+      }
+
+
+      .right-box{
+        background-color: #f8f8f8;
+        border: 1px solid $borderColor;
+
+        .status-option{
+          .option-name{
+            width: 120px;
+            line-height: 32px;
+            color: rgba(0,0,0,0.89);
+            text-align: right;
+          }
+          .option-input-box{
+            margin-left: 100px;
+            .promote-price{
+              margin-right: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#spread{
+  .form-item{
+    .form-content{
+      .item-tip{
+        display: inline-block;
+        margin-left: 10px;
+        margin-top: 4px;
+        color: #4e9698;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>会员列表</title>
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="www/css/mp-common.css">
+    <link rel="stylesheet" href="www/css/member-list.css">
+</head>
+<body>
+    <aside></aside>
+    <header></header>
+    <!--main box start-->
+    <div class="main-box form-inline" id="mainBox">
+        <div class="main-top" id="mainTop">
+            <!--nav start-->
+            <div id="navBox">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#">所有会员列表</a></li>
+                </ul>
+            </div>
+            <!--nav end-->
+            <!--search start-->
+            <div class="search-box" id="searchBox"></div>
+            <!--search end-->
+        </div>
+        <!--main top end-->
+
+        <div class="main-content" id="mainContent">
+            <ul class="member-list-title" id="memberTitle"></ul>
+
+            <ul class="member-list" id="memberList"></ul>
+            <!--member list end-->
+
+            <!--pager-->
+            <nav class="page-nav" id="pageNav"></nav>
+            <!--pager end-->
+        </div>
+
+    </div>
+    <!--main box end-->
+</body>
+</html>
+<script data-main="script/member/app" src="lib/requirejs/require.js"></script>

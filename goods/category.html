@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>品类管理</title>
+    <link rel="stylesheet" href="script/common/upload.css">
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="www/css/mp-common.css">
+    <link rel="stylesheet" href="www/css/brand-category-list.css">
+</head>
+<body>
+<aside></aside>
+
+<header></header>
+<div class="main-box" id="mainBox">
+    <!--breadcrumbs start-->
+    <ol class="breadcrumb" id="breadCrumbs">
+        <li>您当前所在的位置</li>
+        <li><a href="javascript:;">商品管理</a></li>
+        <li class="active" href="javascript:;">品类管理</li>
+    </ol>
+    <!--breadcrumbs end-->
+
+    <!--listBox start-->
+    <div class="list-box category-list" id="listBox"></div>
+    <!--listBox end-->
+
+    <!--modal start-->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="modalTitle">添加一级品牌</h4>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <div id="itemBox">
+                        <input id="bid" type="hidden">
+                        <div class="form-item">
+                            <div class="form-left">品类名称:</div>
+                            <div class="form-right">
+                                <input class="form-control" id="category_name" type="text" maxlength="20" required="required">
+                                <div class="tips category_name-error"></div>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-left">品类排序:</div>
+                            <div class="form-right">
+                                <input class="form-control" id="sort" type="text" maxlength="100" required="required">
+                                <div class="tips sort-error"></div>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-left">是否显示</div>
+                            <div class="form-right">
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="is_show" value="1" checked> 是
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="is_show" value="0"> 否
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-left">在导航栏显示</div>
+                            <div class="form-right">
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="on_nav" value="1" checked> 是
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="on_nav" value="0"> 否
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--modal alert-->
+                    <div class="alert alert-info modal-alert hide" id="modalAlert"></div>
+                    <!--modal alert end-->
+
+                    <!--confirm btn start-->
+                    <div class="btn-confirm" id="confirmBtn">确定</div>
+                    <!--confirm btn end-->
+
+                </div>
+            </div><!-- /.modal-content -->
+        </div>
+    </div>
+    <!--modal end-->
+
+</div>
+</body>
+<script data-main="script/category/app" src="lib/requirejs/require.js"></script>
+
+</html>

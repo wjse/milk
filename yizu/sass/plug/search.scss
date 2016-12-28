@@ -1,0 +1,75 @@
+$searchHeight: 30px;
+$borderRadius: 4px;
+#search {
+  position: absolute;
+  top:15px;
+  left:0;
+  width: 100%;
+  .search-box {
+    position: relative;
+    margin:0 auto;
+    text-align: center;
+  }
+  .search-area {
+    display: inline-block;
+    width: 280px;
+    height: $searchHeight;
+    line-height: $searchHeight;
+    background: #FFF;
+    border-radius: $borderRadius;
+    overflow: hidden;
+    vertical-align: top;
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.1);
+    .search-icon {
+      float: left;
+      margin-left:10px;
+      width: $searchHeight;
+      height: $searchHeight;
+      background: url("../image/yizu-icon.svg") 70px 260px;
+    }
+    .search-input{
+      float: left;
+      width: 180px;
+      height: $searchHeight;
+      input {
+        display: block;
+        margin-top: 5px;
+        padding-left: 5px;
+        height: 20px;
+        outline: none;
+        -webkit-appearance: none;
+        border:none;
+        box-shadow: none;
+        border-left: 1px solid rgba(0,0,0,0.2);
+        border-radius: 0;
+      }
+    }
+    .search-clean {
+      float: right;
+      width: $searchHeight;
+      height: $searchHeight;
+      a img {
+        display: block;
+        margin-top: 7px;
+        width: $searchHeight - 14;
+      }
+    }
+  }
+  .search-btn {
+    display: inline-block;
+    margin-left: 4px;
+    height: 30px;
+    box-sizing: border-box;
+    a{
+      display: block;
+      padding: 6px 10px;
+      font-size: 14px;
+      font-weight: 100;
+      color: #FFFFFF;
+      background-color: #007AFF;
+      text-shadow: none!important;
+      border-radius: $borderRadius;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+  }
+}

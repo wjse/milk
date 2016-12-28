@@ -1,0 +1,141 @@
+
+$bgColor: #EEE;
+$yelloColor: #F79321;
+
+$maxWidth: 500px;
+
+@mixin juchi($leftColor:#FFF,$rightColor: #FFF,$bgColor:#FFF){
+  &:before,&:after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    display: block;
+    width: 12px;
+    height: 100%;
+    margin-top: 20px;
+    background-size: 20px 10px;
+  }
+  &:before {
+    left: -12px;
+    background-color: transparent;
+    background-position: 100% 30%;
+    background-image: linear-gradient(-120deg, $leftColor 25%, transparent 25%, transparent),
+    linear-gradient(-60deg, $leftColor 25%, transparent 25%, transparent),
+    linear-gradient(-120deg, transparent 75%, $leftColor 75%),
+    linear-gradient(-60deg, transparent 75%, $leftColor 75%);
+  }
+  &:after {
+    right: -8px;
+    background-color: $rightColor;
+    background-position: 100% 15%;
+    background-image: linear-gradient(-60deg, $bgColor 25%, transparent 25%, transparent),
+    linear-gradient(-120deg, $bgColor 25%, transparent 25%, transparent),
+    linear-gradient(-60deg, transparent 75%, $bgColor 75%),
+    linear-gradient(-120deg, transparent 75%, $bgColor 75%);
+  }
+}
+
+body {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: $maxWidth;
+  background-color: $bgColor;
+  color: #333;
+  font-family: "黑体";
+  font-size: 14px;
+}
+
+.cp-grid {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 15px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  $headHeight: 40px;
+  .grid-head {
+    height: $headHeight;
+    line-height: $headHeight;
+    text-align: center;
+    overflow: hidden;
+    img {
+      max-width: 100%;
+    }
+  }
+  .ticket-list ul {
+    position: relative;
+    margin: 4px auto;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    $boxPadding: 6px;
+    li:not(:last-child) {
+      margin-bottom: $boxPadding;
+    }
+
+    $liHeight: 90px;
+    li {
+      position: relative;
+      height: $liHeight;
+      background-color: #FFF;
+      border-top: 1px solid rgba(0,0,0,0.2);
+      border-bottom: 1px solid rgba(0,0,0,0.2);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1),0 -1px 3px rgba(0,0,0,0.08);
+      @include juchi(#FFF,#ADADAD,$bgColor);
+      &:after {
+        clear: both;
+      }
+      .info,.sign {
+        float: left;
+        height: $liHeight;
+      }
+      .info {
+        padding: 10px;
+        width: 70%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        overflow: hidden;
+        line-height: 1.5;
+        p {
+          font-size: .9em;
+        }
+        p:first-child {
+          font-size: 1.4em;
+        }
+      }
+      .sign {
+        width: 30%;
+        text-align: center;
+        line-height: $liHeight;
+        background-color: #ADADAD;
+        &:after {
+          content: "";
+          display: block;
+          height: $liHeight;
+          background: url("../image/coupon/icon-quan@0.5.png") no-repeat;
+          background-position: center;
+        }
+      }
+    }
+  }
+}
+.not-use .ticket-list ul li {
+  @include juchi(#FFF, $yelloColor, $bgColor);
+  .sign,.sign:after {
+      background-color: $yelloColor;
+
+  }
+}
+  .used  .ticket-list ul li .sign:after {
+    content: url("../image/coupon/icon-yishiyong@0.5.png");
+    line-height: 120px;
+  }
+  .expire  .ticket-list ul li .sign:after {
+    content: url("../image/coupon/icon-yiguoqi@0.5.png");
+    line-height: 120px;
+  }

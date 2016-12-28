@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>马孚科技</title>
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="www/css/login.css">
+
+
+</head>
+<body>
+    <div id="out">
+        <div id="content">
+            <div class="title-box">
+                <img class="login-logo" src="www/image/logo.png">
+            </div>
+            <ul class="login-ul">
+                <li>
+                    <div class="login-input-group f-oh">
+                        <div class="input-icon-box">
+                            <img class="login-icon" src="www/image/user-name.png">
+                        </div>
+                        <input class="input-set" type="text" id="username" for="username-error"  name="username" required="required" placeholder="用户名" />
+                    </div>
+                    <span class="error-info username-error hide"></span>
+                </li>
+
+                <li>
+                    <div class="login-input-group f-oh">
+                        <div class="input-icon-box">
+                            <img class="login-icon" src="www/image/pwd.png">
+                        </div>
+                        <input class="input-set" type="password" id="password" for="password-error" name="password" required="required" placeholder="密码" />
+                    </div>
+                    <span class="error-info password-error hide"></span>
+                </li>
+
+                <li class="hide">
+                    <div class="alert alert-info" id="loginErr"></div>
+                </li>
+                <li class="btn-set">
+                    <input type="button" id="subBtn" class="subBtn btnSet" value="登录"/>
+                </li>
+            </ul>
+            <input type="hidden" id="redirect">
+        </div>
+    </div>
+<script src="script/common/sha1.js"></script>
+<script src="lib/requirejs/require.js" data-main="script/user/app"></script>
+</body>
+</html>

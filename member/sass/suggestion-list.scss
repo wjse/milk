@@ -1,0 +1,56 @@
+@import "color";
+@import "normal";
+.main-box{
+  position: relative;
+  min-width: 1100px;
+  padding: 40px 20px;
+  background-color: #edf1f2;
+  @import "main-top";
+  //main content start
+  .main-content{
+    background-color: #FFFFFF;
+    .list-col{
+      display: inline-block;
+      width: 22.5%;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 14px;
+      @extend %boxSizing;
+      &.small-list-col{
+        width: 10%;
+        .delete{
+          display: inline-block;
+          width: 30px;
+          color: rgba(255,0,0,0.68);
+          cursor: pointer;
+        }
+      }
+    }
+    .list-head{
+      width: 100%;
+      background-color: $partBg;
+      padding: 5px 0px;
+      font-size: 0px;
+      @extend %boxSizing;
+    }
+    .list-content{
+      li{
+        width: 100%;
+        padding: 10px 0px;
+        font-size: 0px;
+        vertical-align: middle;
+        @extend %boxSizing;
+        border-bottom: 1px solid $borderColor;
+        .alert-warning{
+          width: 98%;
+          margin: 0 auto;
+          font-size: 14px;
+        }
+      }
+    }
+
+    @import "pager-normal";
+
+  }
+  //main content end
+}

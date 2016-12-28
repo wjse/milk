@@ -1,0 +1,72 @@
+$bgColor: #EEE;
+$yelloColor: #F79321;
+$maxWidth: 500px;
+
+body {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: $maxWidth;
+  background-color: $bgColor;
+  color: #333;
+  font-family: "黑体";
+  font-size: 14px;
+}
+
+@mixin boxShadow(){
+  box-shadow: 0 1px 3px rgba(255,255,255,0.05),0 -2px 5px rgba(0,0,0,0.05);
+}
+
+.message-page{
+
+.message-list ul {
+  position: relative;
+  li {
+    margin-top: 6px;
+    padding: 5px 10px;
+    line-height: 1.6;
+    background-color: #FFF;
+    @include boxShadow;
+    .time {
+      line-height: 2;
+      border-bottom: 2px solid rgba(0,0,0,0.3);
+    }
+    .type {
+      padding-top: 5px;
+      color: #000;
+      font-size: 1.2em;
+    }
+    .detail {
+      padding-left: 2em;
+      color: #000;
+    }
+    .time,.type,.detail {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+  .option {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 46px;
+    a {
+      display: block;
+      margin: 5px auto;
+      width: 90%;
+      max-width: $maxWidth * 0.9;
+      height: 36px;
+      text-align: center;
+      line-height: 36px;
+      color: #FFFFFF;
+      background-color: $yelloColor;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.01),0 1px 3px rgba(0,0,0,0.05);
+    }
+  }
+}

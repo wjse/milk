@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>马孚科技</title>
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="www/css/mp-common.css">
+    <link rel="stylesheet" href="script/common/jqtree.css">
+    <link rel="stylesheet" href="script/common/upload.css">
+    <link rel="stylesheet" href="script/common/jquery.date.css">
+    <link rel="stylesheet" href="www/css/add.css">
+</head>
+<body>
+<aside></aside>
+
+<header></header>
+
+<div class="main-box" id="mainBox">
+    <!--breadcrumbs start-->
+    <ol class="breadcrumb" id="breadCrumbs">
+        <li>您当前所在的位置</li>
+        <li><a href="goods-list.html">商品管理</a></li>
+        <li class="active" href="javascript:;">创建商品</li>
+    </ol>
+    <!--breadcrumbs end-->
+
+    <!--listBox start-->
+    <div class="content-box form-inline" id="contentBox">
+
+        <!--detail box start-->
+        <div class="goods-part" id="goodsInfo">
+            <div class="part-title">创建商品</div>
+            <div class="part-content add-part-content">
+                <div class="form-item f-oh">
+                    <div class="form-head"><span class="red-star">&#42;&nbsp;</span>选择品类</div>
+                    <div class="form-content">
+                        <div class="btn-set choose-btn" id="categoryChooseBtn">选择</div>
+                        <input type="hidden" id="categoryId">
+                        <span class="choose-item-box" id="categoryName"></span>
+                        <div class="multiple-choose-box" id="multipleChooseBox"></div>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="form-head"><span class="red-star">&#42;&nbsp;</span>选择品牌</div>
+                    <div class="form-content">
+                        <select class="select-set" id="brandChooseSelect"></select>
+                        <!--<span class="choose-item-box" id="brandName">马孚科技-多路片</span>-->
+                    </div>
+                    <div style="clear: both"></div>
+                </div>
+                <div class="form-item f-oh">
+                    <div class="form-head"><span class="red-star">&#42;&nbsp;</span>商品型号</div>
+                    <div class="form-content">
+                        <div class="basic-box f-oh">
+                            <select class="standard-select f-fl" id="templateSelect">
+                                <option selected="selected" disabled="disabled" value="default">选择商品型号</option>
+                            </select>
+                            <span class="template-tip">若无您的商品型号，请点击</span>
+                            <a class="new-standard-btn" href="basic.html" id="toNewStandardBtn">创建新的型号</a>
+                        </div>
+
+                        <div class="template-box" id="templateBox">
+                            <div class="template-title-name" id="gc_name">这是型号的名称</div>
+                            <div class="spec-box f-oh">
+                                <div class="f-fl lead-title">选择规格</div>
+                                <div class="spec-box-right f-fl">
+                                    <div class="spec-list" id="specList">
+                                        <div class="spec-item">
+                                            <div class="spec-title">颜色：</div>
+                                            <div class="radio-box">
+                                                <label class="checkbox-inline">
+                                                    <input type="radio" name="color"
+                                                           value="yes"> 红色
+                                                </label>
+                                                <label class="checkbox-inline">
+                                                    <input type="radio" name="color"
+                                                           value="no"> 蓝色
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div>只选一部分规格无法保存对应的价格和库存，若某一规格组合的商品已经创建，请勿重复创建</div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-item f-oh">
+                    <div class="form-head"><span class="red-star">&#42;&nbsp;</span>商品标题:</div>
+                    <div class="form-content">
+                        <input class="big-input-set" id="goods_name" type="text" maxlength="50" required="required">
+                    </div>
+                </div>
+
+                <div class="form-item f-oh">
+                    <div class="form-head">商品卖点:</div>
+                    <div class="form-content f-oh">
+                        <textarea class="sale-hot f-fl" id="goods_ad" maxlength="100"></textarea>
+                        <span class="item-tip">卖点用来介绍商品特点，吸引消费者购买，不超过100字</span>
+                    </div>
+                </div>
+                <div class="form-item f-oh">
+                    <div class="form-head"><span class="red-star">&#42;&nbsp;</span>押金:</div>
+                    <div class="form-content f-oh">
+                        <input class="small-input-set f-fl" id="market_price" type="text" maxlength="100">
+                        <span class="item-tip">押金不能低于售价</span>
+                    </div>
+                </div>
+                <div class="form-item f-oh">
+                    <div class="form-head"><span class="red-star">&#42;&nbsp;</span>售价:</div>
+                    <div class="form-content f-oh">
+                        <input class="small-input-set f-fl" id="sale_price" type="text" required="required" maxlength="100">
+                        <span class="item-tip">商品的实际出售价格由系统计算所得，请勿随意修改</span>
+                    </div>
+                </div>
+
+                <div class="form-item f-oh">
+                    <div class="form-head"><span class="red-star">&#42;&nbsp;</span>折扣比例上限:</div>
+                    <div class="form-content f-oh">
+                        <input class="small-input-set f-fl" id="discount_percent" type="text" value="0" required="required" maxlength="100">
+                        <span class="item-tip">只能输入0~1之间的数值，例如输入“0.1”，积分/购物币最多抵扣售价的10%</span>
+                    </div>
+                </div>
+                <div class="form-item f-oh">
+                    <div class="form-head"><span class="red-star">&#42;&nbsp;</span>返佣比例:</div>
+                    <div class="form-content f-oh">
+                        <input class="small-input-set f-fl" id="commission_ratio" value="0" type="text" maxlength="100">
+                        <span class="item-tip">只能输入0~1之间的数值，例如输入“0.05”，返商品价格的5%</span>
+                    </div>
+                </div>
+                <div class="form-item f-oh">
+                    <div class="form-head"><span class="red-star">&#42;&nbsp;</span>运费:</div>
+                    <div class="form-content f-oh">
+                        <input class="small-input-set f-fl" id="freight" type="text" value="0" maxlength="20">
+                        <span class="item-tip">请输入数值</span>
+                    </div>
+                </div>
+                <div class="form-item f-oh">
+                    <div class="form-head">排序:</div>
+                    <div class="form-content f-oh">
+                        <input class="small-input-set f-fl" id="goods_sort" type="text" value="0" maxlength="100">
+                        <span class="item-tip">请输入数值</span>
+                    </div>
+                </div>
+                <div class="form-item f-oh">
+                    <div class="form-head"><span class="red-star">&#42;&nbsp;</span>库存量:</div>
+                    <div class="form-content f-oh">
+                        <input class="small-input-set f-fl" id="stock_balance" type="text" required="required" maxlength="100">
+                        <span class="item-tip">请输入数值</span>
+                    </div>
+                </div>
+                <div class="form-item f-oh">
+                    <div class="form-head"><span class="red-star">&#42;&nbsp;</span>库存预警值:</div>
+                    <div class="form-content f-oh">
+                        <input class="small-input-set f-fl" id="stock_alarm" type="text" required="required" maxlength="100">
+                        <span class="item-tip">请输入数值，例如输入“10”，当该商品库存量<=10的时候会有预警提示</span>
+                    </div>
+                </div>
+
+                <div class="form-item f-oh">
+                    <div class="form-head">商品缩略图:</div>
+                    <div class="form-content">
+
+                        <div class="goods-upload-box">
+                            <div class="thumb-img-box" id="thumbImgBox"></div>
+                            <div class="thumb-img-upload" id="thumbImgUpload">上传图片</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-item f-oh">
+                    <div class="form-head">状态</div>
+                    <div class="form-content">
+                        <div class="right-box">
+                            <div class="status-option">
+                                <span class="f-ib option-name">是否提供发票：</span>
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="provide_invoice"
+                                           value="0" checked="checked"> 无
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="provide_invoice"
+                                           value="1"> 有
+                                </label>
+
+
+                            </div>
+
+                            <!--<div class="status-option">-->
+                                <!--<span class="f-ib option-name">是否上架：</span>-->
+                                <!--<label class="checkbox-inline">-->
+                                    <!--<input type="radio" name="is_on_sale"-->
+                                           <!--value="1" checked="checked"> 是-->
+                                <!--</label>-->
+                                <!--<label class="checkbox-inline">-->
+                                    <!--<input type="radio" name="is_on_sale"-->
+                                           <!--value="0"> 否-->
+                                <!--</label>-->
+                            <!--</div>-->
+
+                            <div class="status-option">
+                                <span class="f-ib option-name">是否显示：</span>
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="is_display"
+                                           value="1" checked="checked"> 是
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="is_display"
+                                           value="0"> 否
+                                </label>
+                            </div>
+                            <div class="status-option">
+                                <span class="f-ib option-name">是否热卖：</span>
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="is_hot"
+                                           value="1"> 是
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="is_hot"
+                                           value="0" checked="checked"> 否
+                                </label>
+                            </div>
+
+                            <div class="status-option">
+                                <span class="f-ib option-name">是否新品：</span>
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="is_new"
+                                           value="1"> 是
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="is_new"
+                                           value="0" checked="checked"> 否
+                                </label>
+                            </div>
+
+
+
+                            <div class="status-option">
+                                <span class="f-ib option-name">是否限购：</span>
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="is_limit"
+                                           value="1"> 是
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="is_limit"
+                                           value="0" checked="checked"> 否
+                                </label>
+                                <div class="option-input-box hide f-ib" id="limitBox">
+                                    <span>限购数量</span>
+                                    <input class="xs-input-set" type="text" id="limit_num">
+                                </div>
+                            </div>
+
+                            <div class="status-option">
+                                <span class="f-ib option-name">是否促销：</span>
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="is_promote"
+                                           value="1"> 是
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="is_promote"
+                                           value="0" checked="checked"> 否
+                                </label>
+                                <div class="option-input-box f-ib hide" id="promoteBox">
+                                    <span>促销价格</span>
+                                    <input class="promote-price xs-input-set" type="text" id="promote_price">
+                                    <input class="small-input-set f-tac" type="text" id="promote_start_time" placeholder="选择开始时间">
+                                    <span>~</span>
+                                    <input class="small-input-set f-tac" type="text" id="promote_end_time" placeholder="选择结束时间">
+                                </div>
+
+                            </div>
+
+                            <div class="status-option">
+                                <span class="f-ib option-name">是否可使用会员卡：</span>
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="for_vip"
+                                           value="1"> 是
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="for_vip"
+                                           value="0" checked="checked"> 否
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!--detail box end-->
+
+        <div class="alert alert-info hide" id="goodsAlertInfo"></div>
+        <!--create btn-->
+        <div class="save-btn" id="saveBtn">保存</div>
+
+
+    </div>
+</div>
+</body>
+<script data-main="../../script/goods/app" src="lib/requirejs/require.js"></script>
+</html>

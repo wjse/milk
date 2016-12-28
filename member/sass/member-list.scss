@@ -1,0 +1,167 @@
+@import "color";
+@import "normal";
+.main-box {
+  position: relative;
+  min-width: 1100px;
+  padding: 40px 20px;
+  background-color: #edf1f2;
+  .main-top {
+    position: relative;
+    .nav-tabs {
+      position: relative;
+      border-bottom: none;
+      li {
+        a {
+          margin-right: 10px;
+          color: #333333;
+          font-size: 18px;
+          background-color: #ffffff;
+        }
+      }
+      li.active {
+        a {
+          color: #4e9198;
+          background-color: $partBg;
+        }
+      }
+    }
+
+    .search-box {
+      position: absolute;
+      top: 6px;
+      right: 0px;
+      .input-group{
+        .input-group-btn{
+          .dropdown-toggle{
+            background-color: #edf1f2;
+            width: 114px;
+            text-align: left;
+            .search-text{
+              display: inline-block;
+              width: 70%;
+            }
+          }
+          .dropdown-menu{
+            min-width: 114px;
+          }
+        }
+      }
+    }
+    .nav-box ul {
+      border: transparent;
+      li {
+        a , a:link, a:visited, a:hover, a:active{
+          border: transparent;
+        }
+      }
+    }
+
+  }
+  //main top end
+
+  //main content start
+  .main-content{
+    min-width: 1060px;
+    .member-list-row{
+      width: 10%;
+      padding: 8px 4px;
+      box-sizing: border-box;
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 14px;
+      text-align: center;
+      color: $fontColor;
+      &.member-id-row{
+        width: 6%;
+      }
+      &.member-info-row{
+        width: 14%;
+      }
+      .opt-icon{
+        width: 20px;
+        cursor: pointer;
+        color: rgba(0,0,0,0.5);
+        text-align: center;
+      }
+    }
+    .member-list-title{
+      font-size: 0px;
+      line-height: 24px;
+      background-color: $partBg;
+    }
+    //member list start
+    .member-list{
+      background-color: white;
+      li{
+        width: 100%;
+        font-size: 0px;
+        border-bottom: 1px solid $borderColor;
+        .member-list-row{
+          &.member-info-row{
+            box-sizing: border-box;
+            text-align: left;
+
+            a{
+              display: inline-block;
+              width: 100%;
+              color: $color;
+            }
+          }
+          .member-infos-item{
+            display: inline-block;
+            vertical-align: middle;
+            &.member-infos-head-img{
+              width: 38%;
+              vertical-align: middle;
+              max-width: 60px;
+              height: 60px;
+              margin-right: 4px;
+              overflow: hidden;
+              .member-head-img{
+                width: 100%;
+              }
+            }
+            &.member-infos-other{
+              width: 54%;
+              .user-name-row{
+                @include text-ellipsis();
+              }
+              .user-register-time-row{
+                font-size: 12px;
+              }
+            }
+          }
+          .change-role{
+            color: $btnColor;
+            cursor: pointer;
+          }
+          .freeze-opt{
+            display: inline-block;
+            width: 30px;
+            cursor: pointer;
+            text-align: center;
+            color: $color;
+          }
+        }
+      }
+    }
+    //member list end
+
+    //pager start
+    .page-nav{
+      text-align: center;
+      margin: 0 auto;
+      .pagination>.active>a,
+      .pagination>.active>a:focus,
+      .pagination>.active>a:hover,
+      .pagination>.active>span,
+      .pagination>.active>span:focus,
+      .pagination>.active>span:hover{
+        background-color: $color;
+        border-color: $color;
+      }
+    }
+    //pager end
+  }
+  //main content end
+}

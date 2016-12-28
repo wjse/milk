@@ -1,0 +1,183 @@
+@import "color";
+@import "normal";
+body {
+  margin-left: 100px;
+  width: expression(document.body.offsetWidth - 100 + "px");
+  font-family: "microsoft yahei";
+}
+
+aside {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  background-color: #1D2B36;
+  .back {
+    text-align: center;
+    line-height: 100px;
+    background-color: #3ac0c3;
+  }
+  li.li-module {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    a {
+      width: 100%;
+      img {
+        max-width: 60%;
+      }
+    }
+  }
+  li.li-module.active{
+    background-color: #344652;
+  }
+}
+header .header-box {
+  height: 100px;
+  background-color: #FFF;
+  overflow: hidden;
+  p{
+    line-height: 100px;
+    font-size: 2.5em;
+  }
+}
+section#mainBox {
+  background-color: #edf1f2;
+  overflow-y: scroll;
+  .main-box {
+    position: relative;
+    min-width: 1100px;
+    margin: 20px auto;
+    overflow: hidden;
+    .main-head {
+      .search-box {
+        float: right;
+        width: 300px;
+      }
+      .nav-box ul {
+        border: transparent;
+        li a {
+          font-size: 16px;
+          border: transparent;
+        }
+      }
+    }
+    .main-body {
+      position: relative;
+      padding: 15px;
+      background-color: #FFF;
+      border-radius: 8px;
+      border-top-left-radius: 0;
+
+      .user-row{
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: $fontColor;
+        float: left;
+        width: 25%;
+      }
+      .list-title{
+        font-size: 16px;
+        overflow: hidden;
+        border-bottom: 1px solid $borderColor;
+      }
+      .list-content{
+        font-size: 14px;
+        li{
+          overflow: hidden;
+          border-bottom: 1px solid $borderColor;
+          .user-row{
+            .update{
+              @include btnSet(46px,24px,$color,white,14px,$color);
+              @include borderRadius(4px);
+              margin-right: 4px;
+            }
+            .delete{
+              @include btnSet(46px,24px,$greenBtnColor,white,14px,$greenBtnColor);
+              @include borderRadius(4px);
+            }
+          }
+        }
+      }
+
+      .form-box form{
+        position: relative;
+        overflow: hidden;
+        .form-group {
+          float: left;
+          padding: 0 10px;
+          width: 50%;
+        }
+        p {
+          float: left;
+          width: 100%;
+          text-align: center;
+          color: #E33E40;
+        }
+        button[type="submit"] {
+          margin: 0 auto;
+          width: 20%;
+        }
+      }
+    }
+  }
+}
+#formBox{
+  .form-item{
+    margin-top: 40px;
+    .form-left{
+      width: 20%;
+      min-width: 150px;
+      float: left;
+      text-indent: 50px;
+      font-size: 16px;
+      color: rgba(0,0,0,0.89);
+    }
+    .form-right{
+      max-width: 78%;
+      float: left;
+      .form-input{
+        width: 300px;
+        background-color: #f3f4f7;
+      }
+      .checkbox-inline{
+        min-width: 130px;
+        margin-left: 0px;
+        margin-bottom: 10px;
+      }
+      .reset-btn{
+        margin-right: 6px;
+      }
+      .default-password{
+        margin-top: 4px;
+      }
+    }
+  }
+  .user-alert{
+    width: 90%;
+    text-align: center;
+    margin: 20px auto 0px;
+  }
+  .save-btn{
+    display: block;
+    width: 200px;
+    margin: 50px auto 40px;
+  }
+}
+.page-nav{
+  margin: 0 auto;
+  text-align: center;
+  .pagination>.active>a,
+  .pagination>.active>a:focus,
+  .pagination>.active>a:hover,
+  .pagination>.active>span,
+  .pagination>.active>span:focus,
+  .pagination>.active>span:hover{
+    background-color: $color;
+    border-color: $color;
+  }
+}

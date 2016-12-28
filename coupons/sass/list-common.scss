@@ -1,0 +1,103 @@
+@import "color";
+@import "normal";
+.content-title{
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 4px;
+  border-left: 4px solid $color;
+}
+.content-box{
+  padding: 0 16px;
+}
+#searchBox{
+  margin: 18px 0px;
+  .form-group{
+    margin-right: 67px;
+    &:last-child{
+      margin-right: 0px;
+    }
+    .search-name{
+      margin-right: 20px;
+    }
+    .search-big-input{
+      @include borderRadius(2px);
+      @include input-width(200px);
+      border: 1px solid #d6d7dc;
+    }
+    .search-small-input{
+      @include borderRadius(2px);
+      @include input-width(88px);
+      border: 1px solid #d6d7dc;
+    }
+    .btn-set{
+      width: 131px;
+      height: 20px;
+      background-color: white;
+      line-height: 18px;
+      text-align: center;
+      border: 1px solid $borderColor;
+      @extend %boxSizing;
+      cursor: pointer;
+      overflow: hidden;
+      .btn-icon{
+        display: inline-block;
+        color: rgba(0,0,0,0.4);
+        float: left;
+      }
+      .btn-text{
+        color: $color;
+      }
+    }
+  }
+}
+//search box end
+
+.list-box{
+  background-color: white;
+  border: 1px solid $borderColor;
+  .list-col{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    text-align: center;
+  }
+  .list-head{
+    width: 100%;
+    background-color: $partBg;
+    padding: 5px;
+    font-size: 0px;
+    border-bottom: 1px solid $borderColor;
+  }
+  .list-content{
+    li{
+      width: 100%;
+      padding: 10px 0;
+      vertical-align: middle;
+      font-size: 0px;
+      border-bottom: 1px solid $borderColor;
+      @extend %boxSizing;
+      &:last-child{
+        border-bottom: none;
+      }
+      .list-col{
+        .card-view{
+          color: $color;
+          cursor: pointer;
+          &:hover{
+            color: $color;
+            text-decoration: none;
+          }
+        }
+        .delete{
+          display: inline-block;
+          margin-left: 10px;
+          color: rgba(255,0,0,0.68);
+          cursor: pointer;
+        }
+      }
+      .alert-warning{
+        font-size: 14px;
+      }
+    }
+  }
+}

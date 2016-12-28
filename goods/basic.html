@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>马孚科技</title>
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="script/common/upload.css">
+    <link rel="stylesheet" href="script/common/jqtree.css">
+    <link rel="stylesheet" href="www/css/mp-common.css">
+    <link rel="stylesheet" href="script/common/summernote.css">
+    <link rel="stylesheet" href="www/css/font-awesome.min.css">
+    <link rel="stylesheet" href="www/css/basic-add.css">
+</head>
+<body>
+<aside></aside>
+
+<header></header>
+
+<div class="main-box" id="mainBox">
+    <!--breadcrumbs start-->
+    <ol class="breadcrumb" id="breadCrumbs">
+        <li>您当前所在的位置</li>
+        <li><a href="javascript:;">商品管理</a></li>
+        <li class="active" href="javascript:;">型号管理</li>
+    </ol>
+    <!--breadcrumbs end-->
+
+    <!--listBox start-->
+    <div class="content-box form-inline" id="contentBox">
+        <!--primary box start-->
+        <div class="goods-part" id="basic">
+            <div class="part-title">商品型号信息</div>
+            <div class="part-content">
+                <div class="form-item f-oh">
+                    <div class="form-head"><span class="red-star">&#42;&nbsp;</span>选择品类</div>
+                    <div class="form-content">
+                        <div class="btn-set choose-btn" id="categoryChooseBtn">选择</div>
+                        <input type="hidden" id="categoryId">
+                        <span class="choose-item-box" id="categoryName"></span>
+                        <div class="multiple-choose-box" id="multipleChooseBox"></div>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="form-head"><span class="red-star">&#42;&nbsp;</span>选择品牌</div>
+                    <div class="form-content">
+                        <select class="select-set" id="brandChooseSelect"></select>
+                        <!--<span class="choose-item-box" id="brandName">马孚科技-多路片</span>-->
+                    </div>
+                    <div style="clear: both"></div>
+                </div>
+                <div class="form-item f-oh">
+                    <div class="form-head"><span class="red-star">&#42;&nbsp;</span>商品型号</div>
+                    <div class="form-content">
+                        <div class="f-oh">
+                            <div class="new-standard-btn f-fl" id="newSpecTemplateBtn">创建新的型号</div>
+                            <select class="standard-select f-fl" id="templateSelect">
+                                <option selected="selected" disabled="disabled" value="">选择已有商品型号</option>
+                            </select>
+                        </div>
+                        <div class="standard-module" id="standardModule">
+                            <div class="form-item f-oh">
+                                <div class="form-head"><span class="red-star">&#42;&nbsp;</span>型号名称:</div>
+                                <div class="form-content">
+                                    <input class="input-set" type="text" id="gc_name" maxlength="50" required="required">
+                                    <div>该型号下可以只有一种规格的商品，也可以有多种规格的商品</div>
+                                </div>
+                            </div>
+
+                            <div class="form-item f-oh">
+                                <div class="form-head">型号描述:</div>
+                                <div class="form-content">
+                                    <textarea class="standard-description" id="gc_desc" maxlength="100"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-item f-oh">
+                                <div class="form-head">规格模板:</div>
+                                <div class="form-content">
+                                    <div class="spec-module-bg" id="specModuleBox">
+                                        <div class="create-spec-box">
+                                            <div class="btn-set" id="toCreateSpecBtn">创建规格</div>
+                                            <span>规格模板可不创建，一旦保存无法修改，请认真填写，若需修改请重新创建规格模板</span>
+                                        </div>
+                                        <ul class="spec-list-box" id="specListBox"></ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-item f-oh">
+                                <div class="form-head"><span class="red-star">&#42;&nbsp;</span>展示价格:</div>
+                                <div class="form-content">
+                                    <input class="input-set" id="display_price" type="text" maxlength="50" required="required">
+                                </div>
+                            </div>
+
+                            <div class="form-item f-oh">
+                                <div class="form-head">排序:</div>
+                                <div class="form-content">
+                                    <input class="input-set" id="gc_sort" type="text" maxlength="50">
+                                </div>
+                            </div>
+
+                            <div class="form-item f-oh">
+                                <div class="form-head">商品图片</div>
+                                <div class="form-content">
+                                    <div class="right-box goods-img-upload-box">
+                                        <div class="preview-box" id="previewBox">
+                                            <div class="thumbnail">
+                                                <img src="" id="gc_thumb">
+                                                <div class="mask">缩略图</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="upload-choose-box">
+                                            <ul class="nav nav-tabs" id="goodsImgTab">
+                                                <li class="active"><a href="javascript:;" for="thumb">缩略图上传</a></li>
+                                                <li><a href="javascript:;" for="detail">细节图上传</a></li>
+                                            </ul>
+                                            <div class="choose-option-box" id="goodsChooseOptionBox">
+                                                <div class="choose-option">
+                                                    <div class="option-row first-option-row">
+                                                        <div class="option-left f-fl">选择本地图片：</div>
+                                                        <div class="optio-right f-fl">
+                                                            <div class="btn-set" id="goodsLocalUpload" for="thumb">本地上传</div>
+                                                        </div>
+                                                        <div style="clear: both"></div>
+                                                    </div>
+                                                    <div class="option-row">
+                                                        <div class="option-left f-fl">提示：</div>
+                                                        <div class="f-fl">图片大小不超过200kb，细节图可上传多张图片大小为525*255的等比例图片</div>
+                                                        <div style="clear: both"></div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-item f-oh">
+                                <div class="form-head">图文详情:</div>
+                                <div class="form-content">
+                                    <div class="common-body-opt">
+                                        <div class="btn-set" id="uploadCommonBodyBtn">上传图文详情</div>
+                                        <div class="btn-set" id="sortBtn">逆序</div>
+                                    </div>
+                                    <div class="editor-area" id="common_body"></div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--primary box end-->
+
+        <!--modal start-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">创建规格模板</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-item">
+                            <div class="modal-item-left">选择规格标题：</div>
+                            <div class="modal-item-right">
+                                <select class="spec-title-choose" id="specTitleChoose"></select>
+                            </div>
+                        </div>
+                        <div class="modal-item">
+                            <div class="modal-item-left">选择规格值：</div>
+                            <div class="modal-item-right" id="specCheckbox"></div>
+                        </div>
+                    </div>
+
+                    <!--alert-->
+                    <div class="alert alert-info hide" id="modalAlertInfo"></div>
+                    <!--confirm btn start-->
+                    <div class="confirm-btn" id="confirmBtn">确定</div>
+                    <!--confirm btn end-->
+                </div><!-- /.modal-content -->
+            </div>
+        </div>
+        <!--modal end-->
+
+        <div class="alert alert-info hide" id="templateAlertInfo"></div>
+        <!--create btn-->
+        <div class="opt-box">
+            <div class="save-btn model-number-save-btn" id="saveBtn">保存</div>
+            <div class="cancel-edit-btn" id="cancelEditBtn">取消编辑</div>
+        </div>
+    </div>
+</div>
+</body>
+<script data-main="../../script/basic/app" src="lib/requirejs/require.js"></script>
+</html>

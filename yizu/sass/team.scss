@@ -1,0 +1,121 @@
+
+$redColor: #C60F27;
+$blueColor: #417BA5;
+$bgColor: #EEE;
+
+@mixin borderBox(){
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin boxShadow(){
+  box-shadow: 1px 2px 5px rgba(0,0,0,0.15), 0 -2px 4px rgba(0,0,0,0.1);
+}
+
+@mixin borderBottom($opacity: 0.1){
+  border-bottom: 1px solid rgba(0,0,0,$opacity);
+}
+
+@mixin ellipse($width: 50%){
+  width: $width;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body{
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
+  background-color: $bgColor;
+  font-family: "黑体";
+  font-size: 14px;
+}
+@import "plug/footer";
+
+.team-page{
+  overflow: hidden;
+
+  #empty{
+    padding:30%;
+
+    img{
+      max-width: 40%;
+    }
+
+    p{
+      text-align: center;
+      font-size: 1.2em;
+    }
+
+    p:not(:last-child){
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.member-list {
+overflow: scroll;
+ul{
+  position: relative;
+  margin-top: 6px;
+  overflow: hidden;
+  @include boxShadow;
+  $liHeight: 60px;
+  li {
+    position: relative;
+    height: $liHeight;
+    background-color: #FFF;
+    overflow: hidden;
+    &:not(:last-child) {
+      @include borderBottom;
+    }
+
+    .head-img {
+      float: left;
+      width: $liHeight;
+      height: $liHeight;
+      @include borderBox;
+      img {
+        display: block;
+        margin: $liHeight * 0.05 auto;
+        width: $liHeight * 0.9;
+        height: $liHeight * 0.9;
+        border-radius: 50%;
+      }
+    }
+    .name {
+      float: left;
+      margin-top: $liHeight * 0.2;
+      padding: 0 10px;
+      @include ellipse(10em);
+      height: $liHeight * 0.6;
+      line-height: $liHeight * 0.6 * 0.5;
+      @include borderBox;
+      p:first-child {
+        color: $blueColor;
+      }
+    }
+    .tel {
+      float: left;
+      padding: $liHeight * 0.2 0;
+      line-height: $liHeight * 0.6 * 0.5;
+      @include borderBox;
+      @include ellipse(6em);
+    }
+    .lower {
+      float: left;
+      padding-left: 10px;
+      line-height: $liHeight;
+      border-left: 1px solid rgba(0,0,0,0.1);
+      @include borderBox;
+      span {
+        color: $redColor;
+      }
+    }
+  }
+}
+}

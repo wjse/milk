@@ -1,0 +1,283 @@
+@import "color";
+@import "normal";
+
+@mixin paddingLeft($leftVal){
+  padding-left: $leftVal;
+}
+
+.padding-left-10{
+  @include paddingLeft(10px);
+}
+.form-margin{
+  margin-top: 8px;
+}
+#mainBox {
+  position: relative;
+  min-width: 1100px;
+  background-color: #edf1f2;
+  padding-top: 14px;
+  .breadcrumb{
+    background-color: transparent;
+    margin: 0px 0px 14px;
+    a{
+      color: #4e9198;
+    }
+  }
+
+  #contentBox {
+    padding: 0px 20px 20px;
+    position: relative;
+    .goods-part{
+      .part-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 12px;
+        padding-left: 4px;
+        border-left: 4px solid $color;
+      }
+      .view-part-content{
+        padding-top: 10px;
+        background-color: #e7e7e7;
+        border: 1px solid $borderColor;
+      }
+      .form-item {
+        font-size: 12px;
+        margin-bottom: 18px;
+        .form-head {
+          width: 100px;
+          float: left;
+          color: rgba(0, 0, 0, 0.89);
+          text-align: right;
+          .red-star{
+            color: #ff0000;
+          }
+        }
+        .form-content {
+          width: 80%;
+          min-width: 958px;
+          padding-left: 20px;
+          color: rgba(0, 0, 0, 0.5);
+          float: left;
+          .item-tip{
+            float: left;
+            margin-left: 10px;
+          }
+          .choose-item-box{
+            color: $color;
+          }
+          .multiple-choose-box{
+            width: 200px;
+            max-height: 200px;
+            background-color: #EFEFEF;
+            @include borderRadius(6px);
+            border: 1px solid $borderColor;
+            display: none;
+            overflow-y: scroll;
+            .jqtree-toggler{
+              font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;;
+            }
+          }
+
+          .select-set{
+            width: 90px;
+            background-color: #e7e7e7;
+            border: 1px solid $borderColor;
+            @include borderRadius(2px);
+          }
+
+          .btn-set{
+            @include btnSet(90px,20px,#e7e7e7,rgba(0,0,0,0.89),12px,#d6d7dc);
+            @include borderRadius(2px);
+          }
+
+          .checkbox-inline:nth-child(2n){
+            padding-left: 10px;
+          }
+          // basic item
+          .basic-box{
+            .standard-select{
+              min-width: 100px;
+              background-color: #e7e7e7;
+              font-size: 12px;
+              color: rgba(0,0,0,0.89);
+              border-color: #d6d7dc;
+            }
+            .template-tip{
+              display: inline-block;
+              letter-spacing: 1px;
+              margin-left: 30px;
+              color: red;
+            }
+            .new-standard-btn{
+              margin-right: 10px;
+              @include btnSet(100px,20px,#e7e7e7,rgba(0,0,0,0.89),12px,#d6d7dc);
+              @include borderRadius(2px);
+              &:hover{
+                text-decoration: none;
+              }
+            }
+          }
+          .template-box{
+            padding: 10px 40px;
+            margin-top: 2px;
+            background-color: #f8f8f8;
+            border: 1px solid $borderColor;
+            display: none;
+            .template-title-name{
+              color: $darkenGreen;
+            }
+            .spec-box{
+              margin-top: 8px;
+              .lead-title{
+                color: $fontColor;
+              }
+              .spec-box-right{
+                padding-left: 10px;
+                .spec-list{
+                  .spec-item{
+                    overflow: hidden;
+                    .spec-title{
+                      color: $fontColor;
+                      float: left;
+                    }
+                    .radio-box{
+                      float: left;
+                      .checkbox-inline{
+                        min-width: 100px;
+                      }
+                    }
+                  }
+                }
+              }
+
+            }
+
+          }
+          .goods-upload-box{
+            padding: 10px;
+            background-color: #f8f8f8;
+            border: 1px solid $borderColor;
+            .thumb-img-box{
+              background-color: white;
+              width: 98px;
+              height: 98px;
+              border: 1px solid $borderColor;
+              margin-bottom: 10px;
+              overflow: hidden;
+              .thumb-img{
+                width: 100%;
+              }
+            }
+
+            .thumb-img-upload{
+              @include btnSet(100px,20px,#e7e7e7,rgba(0,0,0,0.89),12px,#d6d7dc);
+              @include borderRadius(2px);
+            }
+
+            .ajax-upload-dragdrop{
+              width: 100px;
+              padding: 0px;
+              border: none;
+              .ajax-file-upload{
+                height: 20px;
+                line-height: 10px;
+                background-color: #e7e7e7;
+                margin: 0px;
+                padding: 4px 24px;
+                font-size: 12px;
+                font-weight: normal;
+                border: 1px solid #d6d7dc;
+                @include borderRadius(2px);
+                box-shadow: none;
+                color: rgba(0,0,0,0.89);
+              }
+            }
+
+          }
+
+          //goodsInfo
+          .big-input-set{
+            @include borderRadius(2px);
+            @include input-width(500px);
+            border: 1px solid #d6d7dc;
+          }
+          .small-input-set{
+            @include borderRadius(2px);
+            @include input-width(138px);
+            border: 1px solid #d6d7dc;
+          }
+          .xs-input-set{
+            @include borderRadius(2px);
+            @include input-width(60px);
+            border: 1px solid #d6d7dc;
+          }
+          .sale-hot{
+            @include input-width(500px);
+            @include borderRadius(2px);
+            height: 50px;
+            border: 1px solid $borderColor;
+          }
+
+
+          .right-box{
+            background-color: #f8f8f8;
+            border: 1px solid $borderColor;
+
+            .status-option{
+              .option-name{
+                width: 120px;
+                line-height: 32px;
+                color: rgba(0,0,0,0.89);
+                text-align: right;
+              }
+              .option-input-box{
+                margin-left: 100px;
+                .promote-price{
+                  margin-right: 20px;
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.form-inline {
+  .form-control{
+    border-radius: 0px;
+  }
+  .big-input{
+    width: 250px;
+  }
+  .middle-input{
+    width: 220px;
+  }
+  .small-input{
+    width: 100px;
+  }
+}
+
+.save-btn{
+  @include btnSet(160px,36px,$btnColor,#ffffff,18px,$btnColor);
+  @include borderRadius(2px);
+  display: block;
+  margin: 20px auto;
+  &:hover{
+    background-color: $darkenGreenBtnColor;
+  }
+}
+.view-opt-box{
+  width: 334px;
+  margin: 20px auto;
+  .save-btn{
+    display: inline-block;
+  }
+  .cancel-edit-btn{
+    @include btnSet(160px,36px,#e7e7e7,rgba(0,0,0,0.89),18px,#d6d7dc);
+    @include borderRadius(2px);
+  }
+}
+

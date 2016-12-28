@@ -1,0 +1,168 @@
+@import "color";
+@import "normal";
+.main-box {
+  position: relative;
+  min-width: 1100px;
+  padding: 40px 20px;
+  background-color: #edf1f2;
+  .member-view-head{
+    color: rgba(0,0,0,0.7);
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 4px;
+    border-left: 4px solid $color;
+  }
+  //member view content start
+  .member-view-content{
+    padding: 10px 0px;
+    .view-part-box{
+      box-sizing: border-box;
+      padding: 10px 15px 0px;
+      border-top: 1px solid $borderColor;
+      overflow: hidden;
+      &:first-child{
+        border-top: none;
+        overflow: hidden;
+      }
+      .view-box-row{
+        width: 50%;
+        float: left;
+        color: $fontColor;
+        margin-bottom: 8px;
+        &.view-box-big-row{
+          width: 100%;
+          .number-width{
+            display: inline-block;
+            min-width: 40px;
+          }
+          .read-detail-btn{
+            color: $color;
+            cursor: pointer;
+          }
+        }
+        .name-ellipse-set{
+          @include text-ellipsis();
+        }
+        .modify-pencil{
+          width: 20px;
+          text-align: center;
+          font-size: 12px;
+          color: rgba(0,0,0,0.5);
+          cursor: pointer;
+        }
+        .change-role-btn{
+          color: $color;
+          cursor: pointer;
+        }
+        //common detail box style
+        .detail-box{
+          margin-top: 8px;
+          border: 1px solid $borderColor;
+          .detail-title{
+            width: 100%;
+            background-color: $partBg;
+            line-height: 30px;
+            overflow: hidden;
+          }
+          .detail-list{
+            background-color: #F1F1F1;
+            li{
+              margin-top: 8px;
+              overflow: hidden;
+            }
+          }
+          .detail-row{
+            text-align: center;
+            float: left;
+          }
+        }
+        //coin list style
+        .coin-detail-box{
+          .detail-row{
+            width: 20%;
+            &.use-detail-row{
+              width: 40%;
+            }
+          }
+        }
+        //share list style
+        .share-detail-box{
+          .detail-row{
+            width: 20%;
+            &.nickname-row{
+              width: 60%;
+            }
+          }
+        }
+
+      }
+
+
+      .part1-left-box{
+        width: 50%;
+        float: left;
+        overflow: hidden;
+        .member-head-img-box{
+          width: 12.7%;
+          max-width: 60px;
+          height: 60px;
+          margin-right: 8px;
+          float: left;
+          @include borderRadius(60px);
+          overflow: hidden;
+          .member-head-img{
+            width: 100%;
+          }
+        }
+        .part1-left-row-box{
+          width: 87%;
+          float: left;
+          .view-box-row{
+            width: 100%;
+          }
+        }
+      }
+      .part1-right-box{
+        width: 50%;
+        float: left;
+        overflow: hidden;
+        .view-box-row{
+          width: 100%;
+        }
+      }
+    }
+
+    //pager start
+    .page-nav{
+      background-color: #F1F1F1;
+      text-align: right;
+      margin: 0 auto;
+      .pagination{
+        margin-right: 8%;
+      }
+      .pagination>li>a, .pagination>li>span{
+        font-size: 16px;
+        color: $fontColor;
+        background-color: transparent;
+        border: none;
+      }
+      .pagination>.active>a,
+      .pagination>.active>a:focus,
+      .pagination>.active>a:hover,
+      .pagination>.active>span,
+      .pagination>.active>span:focus,
+      .pagination>.active>span:hover{
+        color : $color;
+      }
+    }
+    //pager end
+  }
+  //back member list btn
+  .back-list-btn{
+    @include btnSet(130px,30px,$btnColor,#ffffff,16px,$btnColor);
+    @include borderRadius(2px);
+    display: block;
+    margin: 20px auto;
+  }
+  //member view content end
+}

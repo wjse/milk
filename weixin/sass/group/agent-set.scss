@@ -1,0 +1,63 @@
+.agent-set-group:last-child {
+  margin-bottom: 0;
+}
+.agent-set-group {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,0.1);
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius:4px;
+  background-color: #F8F8F8;
+  p {
+    margin-top: 10px;
+    text-align: center;
+  }
+  strong {
+    line-height: 2.5;
+    font-size: 1.2em;
+  }
+}
+.agent-area {
+  overflow: hidden;
+  .area-confirm {
+    float: right;
+    margin-right: 25px;
+    line-height: 42px;
+  }
+  ul {
+    position: relative;
+    overflow: hidden;
+    li {
+      float: left;
+      margin-bottom: 10px;
+      min-width: 20%;
+    }
+  }
+  #checkboxArea > div {
+    overflow: hidden;
+    label {
+      float: left;
+      margin-bottom: 10px;
+      min-width: 10%;
+      font-weight: normal;
+    }
+  }
+}
+#accountSetForm{
+  position: relative;
+  overflow: hidden;
+  .form-group {
+    width: inherit;
+  }
+}
+.set-area-back {
+  padding: 15px 0;
+  text-align: center;
+  color: #333;
+}
+.confirm-set-account {
+  float: right;
+  margin-right: 25px;
+}

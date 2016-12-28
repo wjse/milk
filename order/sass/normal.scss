@@ -1,0 +1,44 @@
+@mixin borderRadius($radius){
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+}
+@mixin btnSet($width,$height,$bgColor,$color,$fontSize,$border){
+  display: inline-block;
+  width: $width;
+  height: $height;
+  line-height: ($height - 2px);
+  background-color: $bgColor;
+  border: 1px solid $border;
+  text-align: center;
+  color: $color;
+  font-size: $fontSize;
+  cursor: pointer;
+}
+@mixin input-width($width){
+  color: rgba(0,0,0,0.89);
+  width: $width;
+}
+@mixin text-ellipsis{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+@mixin boxShadow($top,$left,$size,$color){
+  box-shadow: $top,$left,$size,$color;
+  -webkit-box-shadow : $top,$left,$size,$color;
+  -moz-box-shadow: $top,$left,$size,$color;
+  -ms-box-shadow: $top,$left,$size,$color;
+  -o-box-shadow: $top,$left,$size,$color;
+}
+@mixin border($position,$width,$color){
+  border-#{$position}: $width solid $color;
+}
+@mixin border-top($width,$color){
+  @include border(top,$width,$color);
+}
+@mixin border-bottom($width,$color){
+  @include border(bottom,$width,$color);
+}

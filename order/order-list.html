@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单列表</title>
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="www/css/mp-common.css">
+    <link rel="stylesheet" href="www/css/order-list.css">
+</head>
+<body>
+    <aside></aside>
+    <header></header>
+    <!--main box start-->
+    <div class="main-box form-inline" id="mainBox">
+        <div class="main-top" id="mainTop">
+            <!--nav start-->
+            <div id="navBox">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#">所有订单</a></li>
+                </ul>
+            </div>
+            <!--nav end-->
+            <!--search start-->
+            <div class="search-box" id="searchBox"></div>
+            <!--search end-->
+        </div>
+        <!--main top end-->
+
+        <div class="main-content" id="mainContent">
+            <!--title start-->
+            <ul class="order-list-title">
+                <li class="order-list-row order-list-big-row">商品名称</li>
+                <li class="order-list-row">押金总额</li>
+                <li class="order-list-row">租金总额</li>
+                <li class="order-list-row">规格描述</li>
+                <li class="order-list-row">数量</li>
+                <li class="order-list-row">交易状态</li>
+                <li class="order-list-row">客户昵称</li>
+            </ul>
+            <!--title end-->
+            <!--order list content start-->
+            <div class="list-box" id="listBox">
+                <div class="list-opt-box hide" id="listOptBox">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="checkAll"> 全选
+                    </label>
+                    <div class="part-export" id="partExportBtn">批量导出</div>
+                </div>
+                <!--list opt box end-->
+                <ul class="order-list" id="orderList"></ul>
+
+                <!--pager start-->
+                <ul class="page-nav" id="pageNav"></ul>
+                <!--pager end-->
+            </div>
+            <!--order list content end-->
+
+
+        </div>
+    </div>
+</body>
+</html>
+<script data-main="script/order/app" src="lib/requirejs/require.js"></script>

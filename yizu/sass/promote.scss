@@ -1,0 +1,94 @@
+
+$maxWidth: 500px;
+
+body {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: $maxWidth;
+  font-family: "黑体";
+  color: #666;
+}
+
+.promote-page {
+
+  .head {
+    margin-top: 10px;
+    text-align: center;
+    img {
+      width: 60%;
+    }
+  }
+
+  $portraitWidth: 160px;
+  .user {
+    text-align: center;
+    .portrait {
+      position: relative;
+      margin-top: 20px;
+      height: $portraitWidth;
+      overflow: hidden;
+      .portrait-bg {
+        position: absolute;
+        width: 100%;
+        height: $portraitWidth;
+        z-index: -1;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        img {
+          width: $portraitWidth;
+        }
+      }
+      .portrait-img {
+        padding-top: 10px;
+        width: 100%;
+        height: $portraitWidth;
+        img {
+          width: $portraitWidth - 20;
+          border-radius: 50%;
+        }
+      }
+
+    }
+
+    .user-info {
+      margin-top: 15px;
+    }
+    .ad {
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+  }
+
+  $codeBgWidth: 300px;
+  .code {
+    position: relative;
+    margin: 10px auto 0;
+    width: $codeBgWidth;
+    overflow: hidden;
+
+    .code-bg {
+      width: 100%;
+      text-align: center;
+      img {
+        width: 100%;
+      }
+    }
+    .code-img {
+      position: absolute;
+      top: 40px;
+      right: 20px;
+      width: $codeBgWidth * 0.3;
+      height: $codeBgWidth * 0.3;
+      img {
+        width: 100%;
+      }
+    }
+    .des {
+      margin: 10px auto;
+      text-align: center;
+    }
+  }
+
+}

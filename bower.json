@@ -1,0 +1,21 @@
+{
+  "name": "milk",
+  "description": "pc",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "requirejs": "^2.2.0",
+    "jquery": "^2.2.2",
+    "bootstrap": "^3.3.6",
+    "jquery-form": "^3.46.0"
+  },
+  "resolutions": {
+    "jquery": "^2.2.2"
+  }
+}

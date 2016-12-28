@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>商品管理</title>
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="www/css/mp-common.css">
+    <link rel="stylesheet" href="www/css/index.css">
+</head>
+<body>
+<aside></aside>
+<header></header>
+<!--main box start-->
+<div class="main-box form-inline" id="mainBox">
+    <div class="main-top" id="mainTop">
+        <!--nav start-->
+        <div id="navBox">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#">所有商品列表</a></li>
+            </ul>
+        </div>
+        <!--nav end-->
+        <!--search start-->
+        <div class="f-oh" id="search">
+            <div class="search-box f-fl">
+                <span class="glyphicon glyphicon-search search-icon"></span>
+                <input class="form-control circle-input search-input" id="searchInput" type="text">
+            </div>
+            <a class="to-create-goods-btn f-fl" id="toCreateGoodsBtn" href="goods-add.html">创建商品</a>
+        </div>
+        <!--search end-->
+    </div>
+    <!--main top end-->
+
+    <!--content box start-->
+    <div class="main-content" id="contentBox">
+        <ul class="list-title">
+            <li class="list-item model-number-item">商品型号</li>
+            <li class="list-item goods-info-item">商品信息</li>
+            <li class="list-item">总销量</li>
+            <li class="list-item">操作</li>
+        </ul>
+
+        <div class="list-content" id="listContent">
+            <!--<div class="opt-box" id="optBox">-->
+                <!--<label class="checkbox-inline">-->
+                    <!--<input type="checkbox" name="checkAll"-->
+                           <!--value="checkAll"> 全选-->
+                <!--</label>-->
+                <!--<div class="part-opt-btn" id="partOptBtn">下架</div>-->
+            <!--</div>-->
+
+            <ul class="goods-list-box" id="goodsListBox">
+                <!--<li>-->
+                    <!--<div class="list-item model-number-item f-oh">-->
+                        <!--<input class="goods-checkbox f-fl" type="checkbox" name="goods">-->
+                        <!--<img class="goods-img f-fl" src="www/image/loginout.png">-->
+                        <!--<div class="model-number-name f-fl">更多机会骄傲的空间按劳动经济大量发得分加咖啡</div>-->
+                    <!--</div>-->
+                    <!--<div class="list-item goods-info-item">-->
+                        <!--<div class="goods-info-item-detail">-->
+                            <!--<div class="goods-name">这就看垃圾都干啥；</div>-->
+                            <!--<div class="goods-other">规格白色24G；库存1000；售价&yen;200；</div>-->
+                        <!--</div>-->
+                        <!--<div class="goods-info-item-detail">-->
+                            <!--<div class="goods-name">这就看垃圾都干啥；</div>-->
+                            <!--<div class="goods-other">规格白色24G；库存1000；售价&yen;200；</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="list-item">-->
+                        <!--销量-->
+                    <!--</div>-->
+                    <!--<div class="list-item">-->
+                        <!--<a class="read-view" href="goods-view.html">查看商品</a>-->
+                        <!--<div class="goods-opt">下架商品</div>-->
+                    <!--</div>-->
+                <!--</li>-->
+
+            </ul>
+
+            <div class="page-box" id="pageBox">
+                <nav class="page-nav" id="pageNav"></nav>
+            </div>
+
+        </div>
+    </div>
+    <!--content box end-->
+</div>
+<!--main box end-->
+</body>
+<script data-main="script/goods/app" src="lib/requirejs/require.js"></script>
+</html>

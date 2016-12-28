@@ -1,0 +1,69 @@
+body {
+  margin-bottom: 50px;
+}
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  .footer-box {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+    height: 50px;
+    background-color: #FFF;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    .footer-li {
+      float: left;
+      width: 25%;
+      a{
+        display: block;
+        text-shadow: none !important;
+        p.footer-li-icon {
+          margin: 5px auto 0;
+          width: 20px;
+          height: 20px;
+          background: url("../image/yizu-icon.svg");
+          background-position-y: 330px;
+        }
+        p:last-child {
+          text-align: center;
+          line-height: 20px;
+          color: #666;
+        }
+      }
+    }
+    .footer-li.active {
+      a {
+        p:last-child {
+          color: #F79321;
+        }
+        p:first-child {
+          background-position-y: 270px;
+        }
+      }
+    }
+    .footer-li:nth-child(1){
+      a p:first-child {
+        background-position-x: 400-20px;
+      }
+    }
+    .footer-li:nth-child(2){
+      a p:first-child {
+        background-position-x: 400-80px;
+      }
+    }
+    .footer-li:nth-child(3){
+      a p:first-child {
+        background-position-x: 400-140px;
+      }
+    }
+    .footer-li:nth-child(4){
+      a p:first-child {
+        background-position-x: 400-200px;
+      }
+    }
+  }
+}

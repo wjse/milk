@@ -1,0 +1,90 @@
+$yelloColor: #F79321;
+$blackColor: #222;
+
+$maxWidth: 500px;
+$boxSpace: 6px;
+$boxPadding: 15px;
+
+@mixin boxShadow($opacity: 0.15){
+  box-shadow: 0 1px 3px rgba(0,0,0,$opacity), 0 -1px 3px rgba(0,0,0,$opacity);
+}
+
+.address-list ul{
+
+  $iconWidth: 20px;
+  li {
+    position: relative;
+    padding: $boxPadding $boxPadding + $iconWidth + 20px $boxPadding $boxPadding;
+    color: $blackColor;
+    background-color: #FFF;
+    overflow: hidden;
+    @include boxShadow(0.05);
+    .u-name {
+      float: left;
+      font-size: 1.4em;
+      margin-bottom: 10px;
+    }
+    .u-tel {
+      float: right;
+      font-size: 1.4em;
+      margin-bottom: 10px;
+    }
+    .u-place {
+      float: left;
+      line-height: 1.1;
+    }
+  }
+}
+.option-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  .option-btn-box {
+    margin: 0 auto;
+    padding: 10px 15px;
+    width: 100%;
+    max-width: $maxWidth;
+    text-align: center;
+    box-sizing: border-box;
+    a {
+      display: inline-block;
+      padding: 10px 0;
+      width: 100%;
+      color: #FFF;
+      font-size: 1.2em;
+      background-color: $yelloColor;
+      border-radius: 4px;
+    }
+  }
+}
+
+.select-address .address-list ul li.active .u-place:before {
+    content: "[默认] ";
+    color: $yelloColor;
+}
+
+.address-page .address-list ul {
+  li.active {
+    background-color: $yelloColor;
+    color: #FFF;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 36px;
+      right: $boxPadding;
+      width: 21px;
+      height: 21px;
+      border: 1px solid #FFF;
+      border-radius: 50%;
+      background: url("../image/yizu-icon-2.svg") 400-240+10px 350-240+10px;
+      background-color: #FFF;
+      box-sizing: border-box;
+    }
+    .u-place {
+      &:before {
+        content: "[默认] ";
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>马孚科技</title>
+    <link rel="stylesheet" href="script/common/upload.css">
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="www/css/system.css">
+</head>
+<body>
+    <nav></nav>
+    <!--back module start-->
+    <div class="back-add-box"></div>
+    <!--back module end-->
+
+    <div class="content f-oh" id="content"></div>
+
+    <!--modal start-->
+
+    <div class="modal fade" id="managementModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        新增业务模块/编辑业务模块
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="hiddenSystemId">
+                    <div class="upload-box">
+                        <div class="preview-box">
+                            <img class="preview-img" src="www/image/weixin.png" for="img-error">
+                        </div>
+                        <div class="f-tac error-info img-error hide"></div>
+                        <div class="upload-btn" id="uploadBtn">上传图标</div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">名称</span>
+                            <input class="form-control" id="name" type="text" for="name-error" maxlength="8">
+                        </div>
+                        <div class="error-info name-error hide">名称不能为空</div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">系统链接</span>
+                            <input class="form-control" id="link" type="text" for="link-error">
+                        </div>
+                        <div class="error-info link-error hide">链接不能为空</div>
+
+                    </div>
+
+                    <div class="alert error-info alert-danger hide" id="alertInfo">错误</div>
+
+                    <div class="btn btn-success btn-box" id="submitBtn">提交更改</div>
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <!--modal end-->
+<script src="lib/requirejs/require.js" data-main="script/system/app"></script>
+</body>
+</html>

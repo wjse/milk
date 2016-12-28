@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>规格管理</title>
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="www/css/mp-common.css">
+    <link rel="stylesheet" href="www/css/spec-list.css">
+
+</head>
+<body>
+    <aside></aside>
+    <header></header>
+    <div class="main-box form-inline" id="mainBox">
+        <div class="main-content" id="mainContent">
+            <!--spec title box start-->
+            <div class="spec-title-box">
+                <div class="box-top">
+                    <span class="head-name">规格标题列表</span>
+                    <div class="add-btn add-title-btn" id="addTitleBtn">添加规格标题</div>
+                </div>
+                <ul class="box-head title-head">
+                    <li class="col-set">标题名称</li>
+                    <li class="col-set">标题编码</li>
+                    <li class="col-set big-col-set">操作</li>
+                </ul>
+                <ul class="box-content title-content" id="titleContent"></ul>
+
+            </div>
+            <!--spec title box end-->
+
+            <!--spec list box start-->
+            <div class="spec-list-box hide" id="specOptionListBox">
+                <div class="box-top">
+                    <span class="head-name">规格项列表</span>
+                    <div class="add-btn add-option-btn" id="addOptionBtn">添加规格项</div>
+                </div>
+                <ul class="box-head spec-option-head">
+                    <li class="col-set">选项名称</li>
+                    <li class="col-set">选项值（选填）</li>
+                    <li class="col-set">租金比例（选填）</li>
+                    <li class="col-set big-col-set">操作</li>
+                </ul>
+                <ul class="box-content spec-option-content" id="specOptionContent"></ul>
+
+            </div>
+            <!--spec list box end-->
+
+            <div style="clear: both"></div>
+        </div>
+    </div>
+
+<script data-main="script/spec/app" src="lib/requirejs/require.js"></script>
+</body>
+</html>

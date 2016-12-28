@@ -1,0 +1,182 @@
+@import "plug/address";
+$bgColor: #EEE;
+$yelloColor: #F79321;
+$blackColor: #222;
+
+$maxWidth: 500px;
+$boxSpace: 6px;
+$boxPadding: 15px;
+$fontStack: 14px;
+
+@mixin boxShadow($opacity: 0.15){
+  box-shadow: 0 1px 3px rgba(0,0,0,$opacity), 0 -1px 3px rgba(0,0,0,$opacity);
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  max-width: $maxWidth;
+  background-color: $bgColor;
+  font-size: $fontStack;
+  font-family: "黑体";
+}
+
+.confirm-page {
+  $iconWidth: 10px;
+  $iconHeight: 14px;
+
+  .address {
+    position: relative;
+    padding: 0 $boxPadding + $iconWidth + 20px 20px $boxPadding;
+    line-height: 2;
+    background-color: #FFF;
+    @include boxShadow(0.05);
+    overflow: hidden;
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: $boxPadding;
+      top: ( $fontStack * ( 1 + 1.4 ) * 2 - $iconHeight ) / 2;
+      width: $iconWidth;
+      height: $iconHeight;
+      background: url("../image/yizu-icon.svg") 400-370px 360-140px;
+    }
+
+    a {
+      display: block;
+      color: $blackColor;
+    }
+
+    .u-name {
+      float: left;
+      font-size: 1.4em;
+    }
+    .u-tel {
+      float: right;
+      font-size: 1.4em;
+    }
+    .u-place {
+      float: left;
+      width: 100%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  .goods-list ul{
+    overflow: hidden;
+
+    li {
+      margin-top: $boxPadding / 2;
+      padding: $boxPadding;
+      background-color: #FFF;
+      @include boxShadow(0.1);
+      overflow: hidden;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+
+      $goodsImgWidth: 90px;
+      .goods-img {
+        float: left;
+        width: $goodsImgWidth;
+        height: $goodsImgWidth;
+        text-align: center;
+        span {
+          display: inline-block;
+          height: 100%;
+          vertical-align: middle;
+        }
+        img {
+          max-width: 100%;
+          vertical-align: middle;
+        }
+      }
+      .goods-info {
+        float: left;
+        margin-left: 10px;
+        width: calc(100% - 90px -10px);
+        color: $blackColor * 2.5;
+        p {
+          font-weight: bolder;
+          line-height: 1.6;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          //white-space: nowrap;
+          span {
+            color: $yelloColor;
+          }
+        }
+      }
+      .goods-price {
+        float: left;
+        width: 100%;
+        p {
+          text-align: right;
+          font-size: 1.2em;
+          font-weight: bolder;
+          color: $blackColor * 2.5;
+          span {
+            color: $yelloColor;
+          }
+        }
+
+      }
+    }
+  }
+
+  $footerHeight: 50px;
+  .confirm {
+    //position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $footerHeight;
+    font-size: 0.8em;
+    p {
+      margin: 0 auto;
+      width: 100%;
+      max-width: $maxWidth;
+      height: $footerHeight;
+      background-color: #FFF;
+      @include boxShadow(0.05);
+      line-height: $footerHeight;
+      text-align: right;
+      span:first-child {
+        margin-right: 2px;
+        color: $blackColor * 3;
+      }
+      span:nth-child(3) {
+        margin-left: 2px;
+        color: $yelloColor;
+      }
+      a {
+        display: inline-block;
+        margin: $footerHeight * 0.1;
+        width: 100px;
+        height: $footerHeight * 0.8;
+        line-height: $footerHeight * 0.8;
+        color: #FFF;
+        border-radius: 4px;
+        background-color: $yelloColor;
+        text-align: center;
+      }
+    }
+
+    #coupon{
+      color : #666666;
+      img{
+        width:25px;
+        height:25px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.select-address {
+
+}

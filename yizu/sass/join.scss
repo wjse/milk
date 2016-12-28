@@ -1,0 +1,120 @@
+@import "plug/footer";
+
+$blackColor: #333;
+$yelloColor: #F79321;
+$bgColor: #EEE;
+
+$maxWidth: 500px;
+
+$fontStone: 14px;
+$fontFamily: "黑体";
+
+@mixin boxShadow($opacity: 0.15) {
+  box-shadow: 0 1px 3px rgba(0,0,0,$opacity),0 -1px 3px rgba(0,0,0,$opacity/2);
+}
+
+body {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
+  background-color: $bgColor;
+  font-family: $fontFamily;
+  font-size: $fontStone;
+  color: $blackColor;
+}
+
+.join-page {
+  .head {
+    margin: 5px auto;
+    padding: 10px 0;
+    background-color: #FFF;
+    @include boxShadow;
+    p {
+      line-height: 1.5;
+      font-size: 1.2em;
+      text-align: center;
+    }
+    p:first-child {
+      font-size: 2em;
+      line-height: 2;
+    }
+  }
+
+  .join-form {
+    padding: 5px 0;
+    .group {
+      position: relative;
+      margin: 10px auto;
+      padding: 5px 0;
+      width: 80%;
+      background-color: #FFF;
+      border-radius: 4px;
+      text-align: center;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      @include boxShadow(0.05);
+      input {
+        width: 80%;
+        border: none;
+        outline: none;
+        text-align: center;
+        line-height: 2;
+        font-family: $fontFamily;
+      }
+    }
+    .submit-btn {
+      display: block;
+      margin: 50px auto 20px;
+      padding: 10px 0;
+      width: 60%;
+      text-align: center;
+      font-size: .9em;
+      color: #FFFFFF;
+      background-color: $yelloColor;
+      border-radius: 4px;
+      @include boxShadow(0.01);
+    }
+  }
+
+  .description {
+    position: relative;
+    padding: 10px 0;
+    overflow: hidden;
+    background-color: #FFF;
+    @include boxShadow;
+
+    .des-block {
+      float: left;
+      padding: 0 10px 0 20px;
+      width: 50%;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      p {
+        font-size: 1.2em;
+        line-height: 2;
+      }
+      ul li {
+        position: relative;
+        font-size: 0.8em;
+        line-height: 1.5;
+        &:before {
+          content: '';
+          position: absolute;
+          top: ( $fontStone * 1.5 * 0.8 - 10 ) / 2;
+          left: -12px;
+          width: 10px;
+          height: 10px;
+          background: url("../image/yizu-icon.svg") 400-300px 360-300px;
+        }
+      }
+    }
+
+    .left {
+      border-right: 1px solid rgba(0,0,0,0.1);
+    }
+
+  }
+}

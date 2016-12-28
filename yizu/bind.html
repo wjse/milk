@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="www/css/index.css">
+    <link rel="stylesheet" href="www/css/bind.css">
+</head>
+<body>
+
+    <div class="head">
+
+        <div class="head-img">
+            <img>
+        </div>
+
+        <div class="user-name"></div>
+    </div>
+
+    <div class="main">
+
+        <div class="bind-form">
+
+            <div class="group">
+                <div></div>
+                <div>
+                    <input type="tel" maxlength="11" id="inputTel" name="tel" placeholder="请输入手机号码">
+                </div>
+            </div>
+
+            <div class="group">
+
+                <div></div>
+
+                <div>
+                    <input type="tel" maxlength="11" disabled id="inputCode" name="code" placeholder="请输入短信验证码">
+                </div>
+
+                <div>
+                    <a id="sendCode" href="#">发送验证码</a>
+                </div>
+            </div>
+
+            <a href="#" id="bindBtn" class="block-btn submit-btn disabled">绑定手机</a>
+
+        </div>
+
+    </div>
+</body>
+</html>
+<script src="lib/requirejs/require.js" data-main="script/profile/bind-app"></script>

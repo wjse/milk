@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">-->
+    <title>系统用户管理</title>
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="www/css/mp-common.css">
+    <link rel="stylesheet" href="www/css/index.css">
+</head>
+<body>
+
+<aside></aside>
+<header></header>
+
+<section id="mainBox">
+    <div class="main-box container">
+        <div class="main-head">
+            <div class="nav-box">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" class="nav-option tab active" forward="tableBox"><a href="javascript:;">系统用户列表</a></li>
+                    <li role="presentation" class="nav-option tab" forward="formBox"><a href="javascript:;">新建/编辑用户</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-body">
+            <div class="table-box table-responsive tab-body" id="tableBox">
+                <div id="tableContent">
+                    <ul class="list-title" id="listTitle"></ul>
+                    <ul class="list-content" id="listContent">
+                        <!--<li>-->
+                            <!--<div class="user-row">用户名</div>-->
+                            <!--<div class="user-row">用户昵称</div>-->
+                            <!--<div class="user-row">用户类型</div>-->
+                            <!--<div class="user-row">-->
+                                <!--<div class="update" data-for="1">编辑</div>-->
+                                <!--<div class="delete" data-for="1">删除</div>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+                <nav class="page-nav" id="pageNav"></nav>
+            </div>
+
+            <div class="form-box tab-body hide" id="formBox">
+                <div class="form-item">
+                    <div class="form-left f-tal">用户名:</div>
+                    <div class="form-right">
+                        <input class="form-control form-input" type="text" id="userName" for="userName-error" maxlength="30" required>
+                        <div class="error-info userName-error hide"></div>
+                    </div>
+                    <div style="clear: both"></div>
+                </div>
+                <div class="form-item">
+                    <div class="form-left f-tal">用户昵称:</div>
+                    <div class="form-right">
+                        <input class="form-control form-input" type="text" id="nickName" for="nickName-error" maxlength="30" required>
+                        <div class="error-info nickName-error hide"></div>
+                    </div>
+                    <div style="clear: both"></div>
+                </div>
+                <div class="form-item">
+                    <div class="form-left f-tal">用户类型:</div>
+                    <div class="form-right">
+                        <select class="form-control form-input" id="admin_type">
+                            <option value="normal">普通用户</option>
+                            <option value="super">超级管理员</option>
+                        </select>
+                    </div>
+                    <div style="clear: both"></div>
+                </div>
+                <div class="form-item">
+                    <div class="form-left f-tal">用户密码:</div>
+                    <div class="form-right f-oh">
+                        <div class="default-password" id="default_password" data-password="123456">用户初始密码为123456</div>
+                        <div class="btn btn-default reset-pwd-btn hide" id="resetPasswordBtn">重置密码</div>
+                        <input id="reset_password" type="hidden">
+                        <!--<div class="default-password f-fl" id="defaultPassword"></div>-->
+                    </div>
+                    <div style="clear: both"></div>
+                </div>
+                <div class="form-item">
+                    <div class="form-left f-tal">业务模块:</div>
+                    <div class="form-right">
+                        <div id="systems"></div>
+                        <div class="error-info systems-error hide"></div>
+                    </div>
+                    <div style="clear: both"></div>
+                </div>
+
+                <div class="alert alert-info user-alert hide" id="alertInfo">错误</div>
+
+                <div class="btn btn-info btn-center save-btn" id="saveBtn">保存</div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<script src="script/common/sha1.js"></script>
+<script data-main="script/user/app" src="lib/requirejs/require.js"></script>
+</body>
+</html>

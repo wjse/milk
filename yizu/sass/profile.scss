@@ -1,0 +1,173 @@
+@import "plug/footer";
+
+$yelloColor: #F79321;
+$bgColor: #EEE;
+$textGray: #5A5A5A;
+$blackColor: #333;
+
+@mixin boxPadding($padding: 20px){
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+@mixin borderBottom (){
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+@mixin blockStyle($marginBottom:15px){
+  margin-bottom: $marginBottom;
+  background-color: #FFF;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05),0 -2px 5px rgba(0,0,0,0.05);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body {
+  background: $bgColor;
+}
+.profile-page {
+  position: relative;
+  margin: 0 auto 50+15px;
+  width: 100%;
+  max-width: 500px;
+  font-family: "黑体";
+
+  .head,.order,.advertise,.account,.set {
+    @include blockStyle;
+  }
+
+  $headHeight: 120px;
+  .head {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    width: 100%;
+    height: $headHeight;
+
+    .head-img {
+      float: left;
+      margin: 20px 10px 20px 0;
+      width: $headHeight - 20 * 2;
+      height: $headHeight - 20 * 2;
+      img {
+        max-width: 100%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+      }
+    }
+
+    .user-info {
+      float: left;
+      margin-top: $headHeight / 4;
+      height: $headHeight / 2;
+      p {
+        font-size: 1.1em;
+        color: #000;
+        line-height: $headHeight / 4;
+      }
+    }
+  }
+
+  .order {
+    .order-head {
+      @include boxPadding;
+      line-height: 2;
+      border-bottom: 1px solid rgba(0,0,0,0.2);
+    }
+    .order-block {
+      @include boxPadding;
+      ul {
+        overflow: hidden;
+        li {
+          float: left;
+          margin: 20px auto;
+          width: 25%;
+          text-align: center;
+          font-size: .9em;
+          color: $textGray;
+          box-sizing: border-box;
+          a {
+            display: block;
+            color: $textGray;
+          }
+          p:first-child {
+            position: relative;
+            margin: 0 auto 5px;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            img {
+              width: 25px;
+            }
+            span {
+              position: absolute;
+              display: inline-block;
+              top: -10px;
+              right: -10px;
+              width: 20px;
+              height: 20px;
+              text-align: center;
+              line-height: 20px;
+              color: #FFF;
+              background-color: $yelloColor;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .advertise,.account,.set {
+    position: relative;
+    ul {
+      overflow: hidden;
+      li {
+        position: relative;
+        @include boxPadding;
+        color: $textGray;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        overflow: hidden;
+        font-size: 1.2em;
+        line-height: 35px;
+        a {
+          display: block;
+          color: $textGray;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          overflow: hidden;
+        }
+        span:first-child {
+          display: inline-block;
+          width: 20px;
+          vertical-align: middle;
+          img {
+            width: 100%;
+            vertical-align: text-bottom;
+          }
+        }
+        span:nth-child(2) {
+          margin-left: 10px;
+        }
+        span:last-child {
+          position: absolute;
+          display: inline-block;
+          top: 10px;
+          right: 20px;
+          width: 10px;
+          height: 16px;
+          background: url("../image/yizu-icon.svg") 400-370+5px 360-140-2px;
+        }
+      }
+      li:not(:last-child) {
+        @include borderBottom;
+      }
+    }
+  }
+}

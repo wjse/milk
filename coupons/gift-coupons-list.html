@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>优惠券礼包</title>
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="www/css/mp-common.css">
+    <link rel="stylesheet" href="www/css/gift-coupons-list.css">
+</head>
+<body>
+    <aside></aside>
+    <header></header>
+    <div class="main-box form-inline" id="mainBox">
+        <div class="main-content" id="mainContent">
+            <div class="content-title">优惠券礼包列表</div>
+            <div class="content-box">
+                <div class="search-box" id="searchBox"></div>
+                <!--list box start-->
+                <div class="list-box" id="listBox">
+                    <ul class="list-head">
+                        <li class="list-col">名称</li>
+                        <li class="list-col big-list-col">起止日期</li>
+                        <li class="list-col">发行量</li>
+                        <li class="list-col">已领取</li>
+                        <li class="list-col">已使用</li>
+                        <li class="list-col">推广方式</li>
+                        <li class="list-col">操作</li>
+                    </ul>
+
+                    <ul class="list-content" id="listContent">
+                        <li><div class="alert alert-warning">该功能暂不开通</div></li>
+                        <!--<li>-->
+                            <!--<div class="list-col">5元券</div>-->
+                            <!--<div class="list-col big-list-col">-->
+                                <!--<div>起：2016-06-02 14:34:23</div>-->
+                                <!--<div>止：2016-06-02 23:59:59</div>-->
+                            <!--</div>-->
+                            <!--<div class="list-col">5元券</div>-->
+                            <!--<div class="list-col">5元券</div>-->
+                            <!--<div class="list-col">5元券</div>-->
+                            <!--<div class="list-col">5元券</div>-->
+                            <!--<div class="list-col">-->
+                                <!--<a class="card-view">查看</a>-->
+                                <!--<span class="delete">删除</span>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                    </ul>
+                    <!--list content end-->
+
+                    <!--pager start-->
+                    <div class="page-nav" id="navPage"></div>
+                    <!--pager end-->
+
+                </div>
+                <!--list box end-->
+            </div>
+
+        </div>
+    </div>
+<script data-main="script/gift-coupons/list-app" src="lib/requirejs/require.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>店铺优惠券</title>
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="www/css/mp-common.css">
+    <link rel="stylesheet" href="script/common/upload.css">
+    <link rel="stylesheet" href="script/common/jquery.date.css">
+    <link rel="stylesheet" href="www/css/store-add.css">
+</head>
+<body>
+    <aside></aside>
+    <header></header>
+    <div class="main-box form-inline" id="mainBox">
+        <!--breadcrumbs start-->
+        <ol class="breadcrumb" id="breadCrumbs">
+            <li>您当前所在的位置</li>
+            <li><a href="store-coupons-list.html">店铺优惠券管理</a></li>
+            <li class="active" href="javascript:;">创建店铺优惠券</li>
+        </ol>
+        <!--breadcrumbs end-->
+        <div class="main-content" id="contentBox">
+            <div class="content-title">创建店铺优惠券</div>
+            <!--primary box-->
+            <div class="form-box" id="primary">
+                <div class="form-title">1.基本信息</div>
+                <div class="form-item f-oh">
+                    <div class="form-head">名称</div>
+                    <div class="form-content f-oh">
+                        <input class="middle-input-set f-fl" id="title" type="text" maxlength="50" required="required">
+                        <span class="item-tip">优惠券名称不超过50字</span>
+                    </div>
+                </div>
+
+                <div class="form-item f-oh">
+                    <div class="form-head">面额</div>
+                    <div class="form-content">
+                        <input class="middle-input-set" id="value" type="text" maxlength="100" required="required">
+                    </div>
+                </div>
+
+                <div class="form-item f-oh">
+                    <div class="form-head">使用条件</div>
+                    <div class="form-content">
+                        <span>满</span>
+                        <input class="xs-input-set" id="limit_value" type="text" maxlength="50" required="required">
+                        <span>元即可使用</span>
+                    </div>
+                </div>
+
+                <div class="form-item f-oh">
+                    <div class="form-head">有效期类型</div>
+                    <div class="form-content">
+                        <label class="checkbox-inline">
+                            <input type="radio" name="date_type" value="A" checked="checked"> 绝对时间
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="radio" name="date_type" value="R"> 相对时间
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-item f-oh" id="absoluteTime">
+                    <div class="form-head">有效时间</div>
+                    <div class="form-content f-oh">
+                        <div class="f-fl">
+                            <input class="small-input-set" id="start_time" type="text" maxlength="50">
+                            <span>&nbsp;~&nbsp;</span>
+                            <input class="small-input-set" id="end_time" type="text" maxlength="50">
+                        </div>
+
+                        <span class="item-tip">开始前用户可以领取但不能使用</span>
+                    </div>
+                </div>
+
+                <div class="form-item hide f-oh" id="relativeTime">
+                    <div class="form-head">有效时间</div>
+                    <div class="form-content f-oh">
+                        <input class="middle-input-set f-fl" id="relative_day" type="text" maxlength="50">
+                        <span class="item-tip">从优惠券进入用户账户开始计算有效天数</span>
+                    </div>
+                </div>
+
+                <div class="form-item f-oh">
+                    <div class="form-head">发行量</div>
+                    <div class="form-content f-oh">
+                        <input class="middle-input-set f-fl" id="create_num" type="text" maxlength="100">
+                        <span class="item-tip">发行量一旦设置不能修改，请谨慎填写！</span>
+                    </div>
+                </div>
+
+                <div class="form-item f-oh">
+                    <div class="form-head">每人限领</div>
+                    <div class="form-content">
+                        <input class="middle-input-set" id="user_receive_limit" type="text" value="1" maxlength="10">
+                    </div>
+                </div>
+
+            </div>
+            <!--primary box end-->
+
+            <!--spread box-->
+            <div class="form-box" id="spread">
+                <div class="form-title">2.推广信息</div>
+                <div class="form-item f-oh">
+                    <div class="form-head">推广方式</div>
+                    <div class="form-content">
+                        <div class="f-oh">
+                            <label class="checkbox-inline f-fl">
+                                <input type="radio" name="promotion_type" value="S" checked="checked"> 商家发放
+                            </label>
+
+                            <span class="item-tip">管理员后台发放，用于会员关系维护</span>
+                        </div>
+                        <div class="f-oh">
+                            <label class="checkbox-inline f-fl">
+                                <input type="radio" name="promotion_type" value="C"> 买家领取
+                            </label>
+
+                            <span class="item-tip">此类优惠券可以通过链接得到领取地址，用户各种推广活动</span>
+                        </div>
+
+                        <div class="spread-info-box">
+                            <div class="spread-info-left">
+                                <div class="spread-info-item">
+                                    <div class="info-head">推广图片</div>
+                                    <div class="info-content">
+                                        <div class="img-box" id="imgBox">
+                                            <!--<img id="img_url">-->
+                                        </div>
+                                        <div class="upload-btn" id="uploadBtn">上传图片</div>
+                                    </div>
+                                </div>
+                                <div class="spread-info-item">
+                                    <div class="info-head">推广描述</div>
+                                    <div class="info-content">
+                                        <textarea class="spread-desc" id="desc" rows="2" maxlength="200"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spread-info-right">
+                                <div class="spread-example-box" id="spreadExampleBox">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-item f-oh">
+                    <div class="form-head">领取人身份</div>
+                    <div class="form-content">
+                        <label class="checkbox-inline">
+                            <input type="radio" name="user_status_limit" value="0" checked="checked"> 任何人
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="radio" name="user_status_limit" value="1"> 限会员
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!--spread box end-->
+
+            <div class="alert alert-warning hide" id="alert"></div>
+
+            <!--save btn-->
+            <div class="save-btn" id="saveBtn">保存</div>
+            <!--save btn end-->
+
+        </div>
+    </div>
+    <script data-main="script/store-coupons/add-app" src="lib/requirejs/require.js"></script>
+</body>
+</html>

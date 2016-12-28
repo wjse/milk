@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="www/css/address-set.css">
+</head>
+<body>
+    <div class="address-page">
+
+        <div class="address-list"></div>
+
+        <div class="address-form hide">
+            <form>
+                <div class="group">
+                    <input type="text" name="contact" placeholder="收件人姓名">
+                </div>
+                <div class="group">
+                    <input type="tel" maxlength="11" name="tel" placeholder="手机号码">
+                </div>
+                <div class="group">
+                    <p id="area">省、市、区</p>
+                    <input type="hidden" name="province" class="areaInput" id="province">
+                    <input type="hidden" name="city" class="areaInput" id="city">
+                    <input type="hidden" name="district" class="areaInput" id="district">
+                    <input type="hidden" name="area_id" class="areaInput" id="areaId">
+                </div>
+                <div class="group">
+                    <textarea id="detail" name="address" rows="5" placeholder="详细地址"></textarea>
+                </div>
+            </form>
+        </div>
+
+        <div class="select hide" id="select">
+            <div class="sel-area province">
+                <ul></ul>
+            </div>
+            <div class="sel-area city">
+                <ul></ul>
+            </div>
+            <div class="sel-area area">
+                <ul></ul>
+            </div>
+        </div>
+
+        <div class="option-btn">
+            <div class="option-btn-box">
+                <a class="block-btn" for="toSave">新增</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<script src="lib/requirejs/require.js" data-main="script/address/app"></script>

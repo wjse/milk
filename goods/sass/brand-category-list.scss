@@ -1,0 +1,261 @@
+@import "color";
+$color: #3ac0c3;
+$darkenGreen : #4e9198;
+@mixin borderRadius($radius){
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -o-border-radius: $radius;
+  -ms-border-radius: $radius;
+}
+@mixin btn($width,$height,$bgColor,$fontColor,$fontSize,$borderColor,$borderRadius){
+  width: $width;
+  height: ($height - 2);
+  line-height: ($height - 2);
+  background-color: $bgColor;
+  text-align: center;
+  color: $fontColor;
+  font-size: $fontSize;
+  border: 1px solid $borderColor;
+  cursor: pointer;
+  @include borderRadius($borderRadius);
+}
+#mainBox{
+  position: relative;
+  height: 100%;
+  background-color: #edf1f2;
+  padding-top: 40px;
+  .breadcrumb{
+    background-color: transparent;
+    margin: 0px 0px 14px;
+    a{
+      color: #4e9198;
+    }
+  }
+  .main-top{
+    padding: 0px 20px;
+    position: relative;
+    .nav-tabs{
+      border-bottom: none;
+      li{
+        a{
+          margin-right: 10px;
+          color: #333333;
+          font-size: 18px;
+          background-color: #ffffff;
+        }
+      }
+      li.active{
+        a{
+          color: #4e9198;
+          background-color: #efefef;
+        }
+      }
+    }
+    #search{
+      position: absolute;
+      top: 0px;
+      right: 20px;
+      .search-box{
+        margin-right: 10px;
+        position: relative;
+        color: #666666;
+        .search-icon{
+          position: absolute;
+          top: 10px;
+          left: 12px;
+        }
+        .search-input{
+          text-indent: 20px;
+        }
+        .circle-input{
+          @include borderRadius(34px);
+        }
+      }
+      .new-brand-btn{
+        min-width: 120px;
+        background-color: $color;
+        border-color: transparent;
+        @include borderRadius(0px);
+      }
+    }
+  }
+
+  .list-box{
+    padding: 0px 20px;
+    .box {
+      width: 100%;
+      margin-right: 20px;
+      background-color: #ffffff;
+      border: 1px solid #d6d7dc;
+      li {
+        list-style: none;
+        height: 50px;
+        width: 100%;
+        padding: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        div {
+          display: inline-block;
+          width: 16%;
+          height: 50px;
+          text-align: center;
+          padding: 4px;
+          line-height: 42px;
+        }
+        .list-btn{
+          display: inline-block;
+          color: $darkenGreen;
+          margin: 0px 4px;
+          cursor: pointer;
+        }
+      }
+      .header{
+        background-color: #efefef;
+      }
+    }
+  }
+  .category-list{
+    padding: 0px 20px;
+    .box{
+      width: 250px;
+      height: 100%;
+      float: left;
+      margin-right: 20px;
+      background-color: #ffffff;
+      border: 1px solid #d6d7dc;
+      overflow-y: scroll;
+      .box-title{
+        height: 46px;
+        padding: 4px 10px;
+        font-size: 18px;
+        vertical-align: middle;
+        border-bottom: 1px solid #efeff4;
+        .title-name{
+          margin-top: 4px;
+        }
+        .add-btn{
+          margin-top: 4px;
+          @include btn(70px,30px,$btnColor,white,16px,$btnColor,2px);
+        }
+      }
+      .box-content{
+        text-align: center;
+        .list-item{
+          height: 60px;
+          padding: 10px;
+          border-bottom: 1px solid #efeff4;
+          cursor: pointer;
+          overflow: hidden;
+          &:hover{
+            background-color: #edf1f2;
+          }
+          .left-img{
+            width: 40px;
+            height: 40px;
+            float: left;
+            overflow: hidden;
+          }
+          .item-name{
+            width: 110px;
+            padding: 10px 4px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            font-size: 16px;
+            color: rgba(0,0,0,0.7);
+            float: left;
+          }
+          .opt-bg{
+            display: inline-block;
+            background-color: #fdfdfd;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            margin-top: 4px;
+            text-align: center;
+            margin-right: 2px;
+            cursor: pointer;
+            float: right;
+            @include borderRadius(24px);
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+
+  .brand-list{
+    .box{
+      li{
+        overflow: hidden;
+        div{
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          img{
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+
+  //    modal
+  .preview-box{
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0,0,0,0.1);
+    margin: 0px 8px 0px 30px;
+    overflow: hidden;
+  }
+
+  .ajax-upload-dragdrop{
+    width: 120px;
+    border: none;
+    padding: 0px;
+    .ajax-file-upload{
+      background: #4ebc75;
+      margin-bottom: 4px;
+    }
+  }
+
+  .upload-btn{
+    width: 90px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #e1e1e1;
+  }
+
+  .form-item{
+    margin-top: 20px;
+    overflow: hidden;
+    .form-left{
+      width: 150px;
+      padding-left: 30px;
+      font-size: 16px;
+      color: rgba(0,0,0,0.89);
+      float: left;
+    }
+
+    .form-right{
+      width: 65%;
+      float: left;
+      .checkbox-inline{
+          padding-left: 0px;
+      }
+    }
+  }
+  .modal-alert{
+    margin-top: 20px;
+  }
+  .btn-confirm{
+    @include btn(120px,30px,$btnColor,white,16px,$btnColor,2px);
+    display: block;
+    margin: 30px auto;
+  }
+}
+.list-item-bg{
+  background-color: #edf1f2;
+}

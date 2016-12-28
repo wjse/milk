@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="www/css/index.css">
+    <link rel="stylesheet" href="www/css/complain.css">
+</head>
+<body>
+    <div class="complain-page">
+
+        <div class="complain-text">
+            <textarea name="complain" id="complain" rows="10" placeholder="请描述您的问题"></textarea>
+        </div>
+
+        <div class="option">
+            <div class="option-box">
+                <a href="#">提交</a>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="script/common/alert.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.option-box').click(function(){
+            var value = $('#complain').val();
+            if(value){
+                $.ajax({
+                    url : 'http://api.vcoola.cn/yizu/complain?uToken='.concat(localStorage.getItem('user')),
+                    type : 'post',
+                    data : {content:value},
+                    success : function(resp){
+                        if(resp.status == 200){
+                            $.info('提交成功');
+                            setTimeout('reload',2000);
+                        }else{
+                            $.info('提交失败','warn');
+                        }
+                    }
+                });
+            }
+        });
+
+        function reload(){
+            window.reload();
+        };
+    });
+</script>

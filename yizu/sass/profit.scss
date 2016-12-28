@@ -1,0 +1,123 @@
+
+$yelloColor: #F79321;
+$bgColor: #EEE;
+$boxSpace: 6px;
+
+@mixin borderBottom($opacity: 0.1){
+  border-bottom: 1px solid rgba(0,0,0,$opacity);
+}
+
+@mixin borderBox(){
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin boxShadow(){
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.1), 0 -1px 2px rgba(0,0,0,0.15);
+}
+
+@mixin ellipse($width: 50%){
+  width: $width;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
+  background-color: $bgColor;
+  font-family: "黑体";
+  font-size: 14px;
+  color: #333;
+}
+
+@import "plug/footer";
+
+#empty{
+  padding:30%;
+
+  img{
+    max-width: 40%;
+  }
+
+  p{
+    text-align: center;
+    font-size: 1.1em;
+  }
+
+  p:not(:last-child){
+    margin-bottom: 15px;
+  }
+}
+
+.order-list ul {
+  position: relative;
+  @include borderBox;
+
+  li {
+    position: relative;
+    margin-top: $boxSpace;
+    background-color: #FFF;
+    overflow: hidden;
+    @include boxShadow;
+    .user {
+      line-height: 2;
+      $nameWidth: 40%;
+      @include borderBottom(0.2);
+
+      p:nth-child(1) {
+        float: left;
+        @include ellipse($nameWidth);
+        text-align: left;
+      }
+      p:nth-child(2) {
+        float: right;
+        @include ellipse(100 - $nameWidth);
+        color: $yelloColor;
+        text-align: right;
+      }
+    }
+    .goods {
+      line-height: 1.5;
+      @include borderBottom(0.15);
+      .g-info {
+        overflow: hidden;
+        $numWidth: 40px;
+        p:nth-child(1) {
+          float: left;
+          @include ellipse();
+          width: calc(100% - 40px);
+        }
+        p:nth-child(2) {
+          float: right;
+          @include ellipse($numWidth);
+          text-align: right;
+        }
+      }
+    }
+    .value {
+      float: right;
+      width: 50%;
+      line-height: 1.5em;
+      font-size: 1.1em;
+      overflow: hidden;
+      @include borderBox;
+      color: #000;
+      p {
+        @include ellipse(100%);
+      }
+      span {
+        color: $yelloColor;
+      }
+    }
+  }
+  li > div {
+    padding: 5px 15px;
+    overflow: hidden;
+  }
+}

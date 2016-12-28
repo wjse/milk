@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="www/css/index.css">
+    <link rel="stylesheet" href="www/css/profile.css">
+</head>
+<body>
+
+    <div class="profile-page" id="profilePage">
+
+        <div class="head">
+            <div class="head-img"></div>
+            <div class="user-info">
+                <p class="name"></p>
+                <p class="phone"><small></small></p>
+            </div>
+        </div>
+
+        <div class="order">
+            <div class="order-head">我的订单</div>
+            <div class="order-block">
+                <ul>
+                    <li>
+                        <a href="order.html?type=unPay">
+                            <p id="unPayCount">
+                                <img src="www/image/profile/iconfont-daifukuan.png">
+                            </p>
+                            <p>待付款</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="order.html?type=unShip">
+                            <p id="unShipCount">
+                                <img src="www/image/profile/iconfont-daifahuo.png">
+                            </p>
+                            <p>待发货</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="order.html?type=unGet">
+                            <p id="unGetCount">
+                                <img src="www/image/profile/iconfont-daishouhuo.png">
+                            </p>
+                            <p>待收货</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="order.html?type=finish">
+                            <p>
+                                <img src="www/image/profile/iconfont-yiwancheng.png">
+                            </p>
+                            <p>已完成</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="advertise">
+            <ul>
+                <li>
+                    <a href="advertise.html">
+                    <span><img src="www/image/profile/iconfont-tuiguangjihua.png"></span>
+                    <span>推广中心</span>
+                    <span></span>
+                    </a>
+                </li>
+                <li><a href="join.html">
+                    <span><img src="www/image/profile/iconfont-zhaoshang.png"></span>
+                    <span>招商加盟</span>
+                    <span></span></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="account">
+            <ul>
+                <li><a href="account-setting.html">
+                    <span><img src="www/image/profile/iconfont-zhanghu-2.png"></span>
+                    <span>账户设置</span>
+                    <span></span></a>
+                </li>
+                <li><a href="coupon.html">
+                    <span><img src="www/image/profile/iconfont-youhuiquan-2.png"></span>
+                    <span>优惠券</span>
+                    <span></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="set">
+            <ul>
+                <li><a href="address.html">
+                    <span><img src="www/image/profile/iconfont-shouhuodizhi-2.png"></span>
+                    <span>收货地址</span>
+                    <span></span></a>
+                </li>
+                <li>
+                    <a href="question.html">
+                    <span><img src="www/image/profile/iconfont-changjianwenti.png"></span>
+                    <span>常见问题</span>
+                    <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="complain.html">
+                    <span><img src="www/image/profile/iconfont-jianyi.png"></span>
+                    <span>投诉建议</span>
+                    <span></span>
+                    </a>
+                </li>
+                <li>
+                    <span><img src="www/image/profile/iconfont-qingchu.png"></span>
+                    <span id="cleanCache"></span>
+                    <span></span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>
+<script src="lib/requirejs/require.js" data-main="script/profile/app"></script>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>会员详情</title>
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="www/css/mp-common.css">
+    <link rel="stylesheet" href="www/css/member-view.css">
+</head>
+<body>
+    <aside></aside>
+    <header></header>
+    <!--main box start-->
+    <div class="main-box form-inline" id="mainBox">
+        <div class="member-view-head">会员详细信息</div>
+        <div class="member-view-content" id="mainContent">
+            <div class="view-part-box">
+                <div class="part1-left-box">
+                    <div class="member-head-img-box">
+                        <img class="member-head-img" id="headImg" alt="会员头像">
+                    </div>
+                    <div class="part1-left-row-box">
+                        <div class="view-box-row">
+                            <span>昵称：</span>
+                            <span class="name-ellipse-set" id="nickname"></span>
+                        </div>
+                        <div class="view-box-row">
+                            <span>真实姓名：</span>
+                            <span id="real_name"></span>
+                        </div>
+                        <div class="view-box-row">
+                            <span>手机号码：</span>
+                            <span id="mobile"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="part1-right-box">
+                    <div class="view-box-row">
+                        <span>ID：</span>
+                        <span id="id"></span>
+                    </div>
+
+                    <div class="view-box-row">
+                        <sapn>成交订单数：</sapn>
+                        <span id="order_num"></span>
+                    </div>
+
+                    <div class="view-box-row">
+                        <span>用户状态：</span>
+                        <span id="is_lock"></span>
+                    </div>
+                </div>
+            </div>
+            <!--part 2-->
+            <div class="view-part-box">
+                <div class="view-box-row view-box-big-row">
+                    <span>注册方式：</span>
+                    <span id="register_way"></span>
+                </div>
+                <div class="view-box-row">
+                    <span>注册时间：</span>
+                    <span id="create_time"></span>
+                </div>
+                <div class="view-box-row">
+                    <span>推荐人ID：</span>
+                    <span id="parent_id"></span>
+                </div>
+                <div class="view-box-row">
+                    <span>最近登录时间：</span>
+                    <span id="last_login_time"></span>
+                </div>
+                <div class="view-box-row">
+                    <span>推荐人昵称：</span>
+                    <span class="name-ellipse-set" id="parent_nickname"></span>
+                </div>
+
+                <div class="view-box-row">
+                    <span>会员角色：</span>
+                    <span id="user_role"></span>
+                </div>
+                <div class="view-box-row">
+                    <span>变更角色：</span>
+                    <span class="change-role-btn" id="changeRoleBtn"></span>
+                </div>
+            </div>
+            <!--part 3-->
+            <div class="view-part-box">
+                <div class="view-box-row view-box-big-row">
+                    <div>
+                        <span>当前积分：</span>
+                        <span class="number-width" id="points"></span>
+                        <span class="read-detail-btn" id="readPointsDetailBtn">查看详情</span>
+                    </div>
+
+                    <div class="detail-box coin-detail-box hide" id="pointsDetailBox">
+                        <ul class="detail-title coin-list-title" id="pointsListTitle"></ul>
+                        <ul class="detail-list coin-list" id="pointsList"></ul>
+                        <!--pager-->
+                        <nav class="page-nav" id="pointsPageNav"></nav>
+                    </div>
+
+                </div>
+            </div>
+            <!--part 4-->
+            <div class="view-part-box">
+                <div class="view-box-row view-box-big-row">
+                    <div>
+                        <span>当前佣金：</span>
+                        <span class="number-width" id="coin"></span>
+                        <span class="read-detail-btn" id="readCoinsDetailBtn">查看详情</span>
+                    </div>
+
+                    <div class="detail-box coin-detail-box hide" id="coinDetailBox">
+                        <ul class="detail-title coin-list-title" id="coinListTitle"></ul>
+                        <ul class="detail-list coin-list" id="coinList"></ul>
+                        <!--pager-->
+                        <nav class="page-nav" id="coinPageNav"></nav>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--part 5-->
+            <div class="view-part-box">
+                <div class="view-box-row view-box-big-row">
+                    <div>
+                        <span>推荐客户：</span>
+                        <span class="number-width" id="share_count"></span>
+                        <span class="read-detail-btn" id="readShareDetaldBtn">查看详情</span>
+                    </div>
+
+                    <div class="detail-box share-detail-box hide" id="shareDetailBox">
+                        <ul class="detail-title share-list-title" id="shareListTitle">
+
+                        </ul>
+                        <ul class="detail-list share-list" id="shareList">
+
+                        </ul>
+                        <!--pager-->
+                        <nav class="page-nav" id="sharePageNav"></nav>
+                    </div>
+                </div>
+            </div>
+            <!--part 5 end-->
+            <div class="back-list-btn" id="backListBtn">返回会员列表</div>
+        </div>
+        <!--main content end-->
+    </div>
+
+</body>
+</html>
+<script data-main="script/member/app" src="lib/requirejs/require.js"></script>

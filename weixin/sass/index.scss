@@ -1,0 +1,158 @@
+@import "group/agent-set.scss";
+.btn-primary {
+  background-color: #3bc1c4;
+  border:#2aabd2;
+}
+.btn-danger {
+  background-color: #4ebc75;
+  border: #4ebc99;
+}
+section#mainBox {
+  background-color: #edf1f2;
+  overflow: hidden;
+  .main-box {
+    position: relative;
+    margin: 20px auto;
+    overflow: hidden;
+  }
+}
+.main-head {
+  .search-box {
+    float: right;
+    max-width: 300px;
+  }
+  .nav-box ul {
+    border: transparent;
+    li {
+      a , a:link, a:visited, a:hover, a:active{
+        border: transparent;
+      }
+    }
+  }
+}
+.main-body {
+  position: relative;
+  padding: 15px;
+  background-color: #FFF;
+  border-radius: 8px;
+  border-top-left-radius: 0;
+  .table-box {
+    min-height: 200px;
+    table {
+      overflow: scroll;
+    }
+  }
+  .form-box form{
+    position: relative;
+    overflow: hidden;
+    .form-group {
+      float: left;
+      padding: 0 10px;
+      width: 50%;
+    }
+    p {
+      float: left;
+      width: 100%;
+      text-align: center;
+      color: #E33E40;
+    }
+    .form-opt-area {
+      text-align: center;
+      button {
+        width: 20%;
+        max-width: 120px;
+      }
+    }
+  }
+  .page-nav {
+    text-align: right;
+  }
+}
+#modalPic img {
+  width: 100%;
+}
+.menu-box {
+  position: relative;
+  margin: 0 auto;
+  max-width: 900px;
+  height: 500px;
+  overflow-y: scroll;
+  &::-webkit-scrollbar{width:0;}
+  .menu-group {
+    margin-bottom: 20px;
+    padding: 0 15px;
+  }
+}
+.menu-group .group-box {
+  width: 100%;
+  min-height: 350px;
+  border: 1px solid #E5E5E5;
+  background-color: #FFF;
+  border-radius: 2px;
+  .group-head {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.2em;
+    border-bottom: 1px solid #E5E5E5;
+  }
+  .group-body {
+    padding-left: 30px;
+    padding-right: 15px;
+    width: 100%;
+    overflow: hidden;
+    ul li{
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+  .group-option {
+     position: absolute;
+     left: 20%;
+     bottom: 10%;
+     width: 60%;
+   }
+  .menu {
+    overflow: hidden;
+    .menu-option {
+      float: right;
+    }
+  }
+}
+#menuModal .modal-content {
+  background-color: #EDF1F2;
+  width: 520px;
+}
+.menu-option-box {
+  position: relative;
+  padding: 0 15px;
+  min-height: 250px;
+  .menu-type {
+    text-align: left;
+  }
+  .control-label {
+    text-align: left;
+  }
+  .menu-body-box {
+    margin-bottom: 15px;
+    padding: 20px 20px 5px;
+    font-size: 0.8em;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 4px;
+    .control-label {
+      text-align: right;
+    }
+  }
+  .submit-area {
+    text-align: center;
+  }
+}
+.nowrap {
+  display: inline-block;
+  max-width: 15em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

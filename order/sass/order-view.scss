@@ -1,0 +1,265 @@
+@import "color";
+@import "normal";
+.main-box {
+  position: relative;
+  min-width: 1100px;
+  padding: 40px 20px;
+  background-color: #edf1f2;
+  .breadcrumb{
+    background-color: transparent;
+    margin: 0px 0px 14px;
+    a{
+      color: #4e9198;
+    }
+  }
+  //main content start
+  .main-content{
+    .content-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      padding-left: 4px;
+      border-left: 4px solid $color;
+    }
+    //content part common start
+    .content-part{
+      border: 1px solid $borderColor;
+      .part-title{
+        padding-left: 40px;
+        background-color: $color;
+        line-height: 30px;
+        color: white;
+      }
+      .part-content{
+        background-color: $partBg;
+      }
+    }
+    //content part common end
+    .part1{
+      .part-title{
+        .order-num-box,.order-state-box{
+          display: inline-block;
+          margin-right: 100px;
+        }
+      }
+      .part-content{
+        padding: 10px 0px;
+        color: $fontColor;
+        .track-order-btn{
+          @include btnSet(100px,30px,rgba(0,0,0,0.2),$fontColor,16px,$borderColor);
+          @include borderRadius(2px);
+          margin-left: 40px;
+        }
+        .ship-btn{
+          @include btnSet(100px,30px,$btnColor,white,16px,$btnColor);
+          @include borderRadius(2px);
+          margin-left: 6px;
+        }
+      }
+    }
+    .part2{
+      margin-top: 10px;
+      .part-content{
+        padding-bottom: 10px;
+        .consigness-info-box{
+          padding-left: 40px;
+          overflow: hidden;
+          border-bottom: 1px solid $borderColor;
+          .consigness-left,.consigness-right{
+            width: 50%;
+            float: left;
+            .consigness-box-title{
+              margin: 18px 0px;
+            }
+            .consigness-box-item{
+              margin-bottom: 6px;
+            }
+          }
+        }
+        //consigness box end
+        //order-goods-info-box start
+        .order-goods-info-box{
+          padding-left: 40px;
+          padding-right: 20px;
+          .info-head{
+            padding: 8px 0px;
+          }
+          .goods-info-box{
+            background-color: #f8f8f8;
+            border: 1px solid $borderColor;
+            .box-col{
+              width: 18%;
+              display: inline-block;
+              vertical-align: middle;
+              text-align: center;
+              font-size: 14px;
+              &.box-big-row{
+                width: 28%;
+              }
+            }
+            .goods-info-title{
+              font-size: 0px;
+              padding: 5px;
+              border-bottom: 1px solid $borderColor;
+            }
+            .goods-info-list{
+              padding: 0px 10px;
+              li{
+                display: inline-block;
+                width: 100%;
+                vertical-align: middle;
+                font-size: 0px;
+                padding: 10px 0px;
+                border-top: 1px solid #ededed;
+                &:first-child{
+                  border: none;
+                }
+                .box-big-row{
+                  overflow: hidden;
+                  .goods-img{
+                    width: 22%;
+                    float: left;
+                    max-width: 60px;
+                    height: 60px;
+                    overflow: hidden;
+                  }
+                  .goods-name{
+                    width: 70%;
+                    float: left;
+                    text-align: left;
+                    padding: 0px 10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        //order-goods-info-box end
+      }
+    }
+    //part 2 end
+    //total box start
+    .total-box{
+      color: $fontColor;
+      overflow: hidden;
+      .total-content{
+        width: 25%;
+        float: right;
+        .total-row{
+          padding: 3px 0px;
+          overflow: hidden;
+          .total-row-left{
+            width: 60%;
+            text-align: right;
+            float: left;
+          }
+          .total-row-right{
+            width: 40%;
+            float: left;
+          }
+          &.order-total{
+            border-top: 1px solid $borderColor;
+          }
+          &.order-count-row{
+            .total-row-left{
+              font-size: 16px;
+            }
+          }
+        }
+        //total row end
+        .back-list-btn{
+          @include btnSet(100%,30px,#b2b2b2,$fontColor,16px,$borderColor);
+          margin-top: 16px;
+        }
+      }
+    }
+    //total box end
+
+    //ship box start
+    .ship-box{
+      background-color: $partBg;
+      margin-top: 10px;
+      border: 1px solid $borderColor;
+      display: none;
+      .ship-head{
+        padding-left: 40px;
+        line-height: 30px;
+        color: $fontColor;
+        border-bottom: 1px solid $borderColor;
+      }
+      .ship-content{
+        padding-left: 40px;
+        border-bottom: 1px solid $borderColor;
+        .ship-row{
+          margin-bottom: 8px;
+          &:first-child{
+            margin-top: 10px;
+          }
+          .ship-company-select{
+            width: 100px;
+            margin-left: 8px;
+            background-color: #b2b2b2;
+          }
+          .ship-num-input{
+            @include input-width(250px);
+            border: 1px solid #d6d7dc;
+            margin-left: 8px;
+          }
+        }
+      }
+      .ship-bottom{
+        width: 260px;
+        margin: 0 auto;
+        padding: 10px 0px;
+        .confirm-ship-btn{
+          @include btnSet(120px,30px,$btnColor,white,16px,$btnColor);
+        }
+        .cancel-ship-btn{
+          @include btnSet(120px,30px,#b2b2b2,$fontColor,16px,$borderColor);
+          margin-left: 6px;
+        }
+      }
+    }
+    //ship box end
+
+    //order track box start
+    .order-track-box{
+      background-color: $partBg;
+      margin-top: 10px;
+      border: 1px solid $borderColor;
+      color: $fontColor;
+      display: none;
+      .track-row{
+        display: inline-block;
+        width: 25%;
+        font-size: 14px;
+        text-align: center;
+        &.track-big-row{
+          width: 50%;
+        }
+      }
+      .track-title{
+        font-size: 0px;
+        line-height: 30px;
+        color: $fontColor;
+        border-bottom: 1px solid $borderColor;
+      }
+      .track-list{
+        border-bottom: 1px solid $borderColor;
+        li{
+          width: 100%;
+          font-size: 0px;
+          padding: 6px 0px;
+        }
+      }
+      .up-track-btn{
+        @include btnSet(120px,30px,#b2b2b2,$fontColor,16px,$borderColor);
+        display: block;
+        margin: 10px auto;
+      }
+    }
+    //order track box end
+
+
+  }
+}

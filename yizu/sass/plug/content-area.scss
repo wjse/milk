@@ -1,0 +1,179 @@
+$indexOrangeColor: #F79321;
+
+.content-area {
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  .area-head {
+    margin: 10px;
+    padding-left: 10px;
+    width: 100%;
+    height: 18px;
+    font-size: 18px;
+    line-height: 1;
+    border-left: 4px solid $indexOrangeColor;
+    overflow: hidden;
+    box-sizing: border-box;
+    .time-count {
+      float: right;
+      margin-right: 20px;
+      font-size: 12px;
+      text-shadow: none;
+      span {
+        display: inline-block;
+        padding: 2px;
+        background-color: #666;
+        color: #EEE;
+        border-radius: 2px;
+      }
+    }
+  }
+  .area-main{
+    .area-box {
+      position: relative;
+      width: 100%;
+      padding-bottom:2px;
+      ul {
+        position: absolute;
+        left:0;
+        overflow: hidden;
+        min-width: 100%;
+        box-shadow: 0px -1px 2px rgba(0,0,0,0.05);
+        li:not(:last-child){
+          border-right: 1px solid rgba(0,0,0,0.2);
+        }
+        li > a {
+          margin: 0 auto;
+          display: block;
+          background-color: #FFF;
+        }
+        li {
+          float: left;
+          margin: 10px auto 5px;
+          padding: 0 8px;
+          box-sizing: border-box;
+          .li-image {
+            height: 80px;
+            img {
+              display: block;
+              margin: 0 auto;
+              max-width: 70px;
+              max-height: 66px;
+            }
+          }
+          .li-text {
+            margin: 0 auto;
+            padding: 5px 10px 0;
+            height: 36px;
+            line-height: 18px;
+            font-size: 13px;
+            font-family: 黑体;
+            color: #555;
+            text-overflow: -o-ellipsis-lastline;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            background-color: #FFF;
+          }
+          .li-info {
+            padding: 10px 5px;
+            font-size: 10px;
+            background-color: #FFF;
+            overflow: hidden;
+            .info-l {
+              float: left;
+              max-width: 42px;
+              color: #CCC;
+              line-height: 25px;
+              p:last-child {
+                font-size: 1.2em;
+                color: $indexOrangeColor;
+              }
+            }
+            .info-r {
+              float: right;
+              width: 30px;
+              img {
+                display: block;
+                margin-top: 5px;
+                width: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.area-1 .area-box{
+  height: 180px;
+}
+
+.area-2{
+  .area-main {
+    position: relative;
+    .list {
+      width: 100%;
+      //margin-bottom: 5px;
+      .list-head {
+        padding: 10px 0 10px 10px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+        font-size:1.2em;
+        background-color: #FFF;
+        overflow: hidden;
+        box-sizing: border-box;
+        img {
+          height: 16px;
+        }
+        .more {
+          float: right;
+          margin-right: 10px;
+          a {
+            text-shadow: none !important;
+            font-size: 0.8em;
+            color: #666;
+          }
+        }
+      }
+      .area-box ul{
+        position: relative;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      ul li {
+        margin: 2px 1px;
+        padding: 0;
+        height:180px;
+        width: 49%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        border: none !important;
+
+        a {
+          padding: 5px;
+          background-color: #FFF;
+          box-shadow: 0px -2px 5px rgba(0,0,0,0.05),0 1px 5px rgba(0,0,0,0.05) !important;
+        }
+        .li-image {
+          border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .li-info {
+          color: $indexOrangeColor;
+        }
+      }
+      //li:nth-child(3n-2) {
+      //  padding-right: 0;
+      //}
+      //li:nth-child(3n) {
+      //  padding-left: 0;
+      //}
+    }
+  }
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>品牌管理</title>
+    <link rel="stylesheet" href="script/common/upload.css">
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="www/css/mp-common.css">
+    <link rel="stylesheet" href="www/css/brand-category-list.css">
+</head>
+<body class="brand">
+
+    <aside></aside>
+
+    <header></header>
+
+    <div class="main-box" id="mainBox">
+
+        <div class="main-top" id="mainTop">
+            <!--nav start-->
+            <div id="navBox">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#">品牌列表</a></li>
+                </ul>
+            </div>
+            <!--nav end-->
+            <!--search start-->
+            <div class="f-oh" id="search">
+                <div class="search-box f-fl">
+                    <span class="glyphicon glyphicon-search search-icon"></span>
+                    <input class="form-control circle-input search-input" id="searchInput" type="text">
+                </div>
+                <a class="btn btn-info new-brand-btn f-fl" id="newBrand">创建品牌</a>
+            </div>
+            <!--search end-->
+        </div>
+        <!--main top end-->
+
+        <div class="list-box brand-list" id="listBox"></div>
+
+        <!--modal start-->
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="modalTitle"></h4>
+                    </div>
+                    <div class="modal-body" id="modalBody">
+                        <!--upload-->
+                        <div class="upload-box f-oh" id="uploadBox">
+                            <div class="preview-box f-fl">
+                                <img class="img-set preview-img" id="image">
+                                <input type="hidden" id="brand_logo">
+                            </div>
+                            <div class="f-fl upload">
+                                <div class="upload-btn" id="uploadBtn">上传图片</div>
+                                <div class="tips" id="imageTips">图片尺寸40*40，建议上传logo</div>
+                            </div>
+                        </div>
+
+                        <div id="itemBox">
+                            <input id="bid" type="hidden">
+                            <div class="form-item">
+                                <div class="form-left">品牌名称:</div>
+                                    <div class="form-right">
+                                        <input class="form-control" id="brand_name" type="text" maxlength="100" required="required">
+                                        <div class="tips brand_name-error"></div>
+                                    </div>
+                            </div>
+                            <div class="form-item">
+                                <div class="form-left">品牌描述:</div>
+                                <div class="form-right">
+                                    <input class="form-control" id="brand_description" type="text" maxlength="100" required="required">
+                                    <div class="tips brand_description-error"></div>
+                                </div>
+                            </div>
+                            <div class="form-item">
+                                <div class="form-left">排序:</div>
+                                <div class="form-right">
+                                    <input class="form-control" id="sort" type="text" maxlength="100" required="required">
+                                    <div class="tips sort-error"></div>
+                                </div>
+                            </div>
+                            <div class="form-item">
+                                <div class="form-left">是否显示</div>
+                                <div class="form-right">
+                                    <input type="radio" class="is_show" name="is_show" value="1" checked> 是
+                                    <input type="radio" class="is_show" name="is_show" value="0"> 否
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="btn-confirm" id="confirmBtn">确定</div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div>
+        </div>
+        <!--modal end-->
+
+    </div>
+</body>
+<script data-main="script/brand/app" src="lib/requirejs/require.js"></script>
+</html>

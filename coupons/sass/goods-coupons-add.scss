@@ -1,0 +1,15 @@
+@import "color";
+@import "normal";
+.main-box{
+  position: relative;
+  min-width: 1100px;
+  background-color: #edf1f2;
+  padding-top: 14px;
+  .breadcrumb{
+    background-color: transparent;
+    margin: 0px 0px 14px;
+    a{
+      color: #4e9198;
+    }
+  }
+}

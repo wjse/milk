@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>公众号管理</title>
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="www/css/mp-common.css">
+    <link rel="stylesheet" href="www/css/index.css">
+</head>
+<body>
+
+<aside></aside>
+
+<header></header>
+
+<section id="mainBox">
+
+    <div class="main-box container">
+
+        <div class="main-head" id="mainHead">
+
+            <div class="search-box hide" id="searchBox"></div>
+
+            <div class="nav-box" id="navBox"></div>
+
+        </div>
+
+        <div class="main-body">
+
+            <div class="table-box table-responsive" id="tableBox">
+
+                <div id="tableArea"></div>
+
+                <nav class="page-nav" id="pageNav"></nav>
+
+            </div>
+
+            <div class="form-box hide" id="formBox"></div>
+
+            <div class="menu-box row hide" id="menuBox"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">查看图片</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="modalPic"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade" id="menuModal" role="dialog" aria-labelledby="menuModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modalTitle">创建一级菜单</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="menu-option-box">
+                        <div class="option-body" id="optionBody"></div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <script data-main="script/account/app" src="lib/requirejs/require.js" defer async="true"></script>
+</body>
+</html>

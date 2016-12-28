@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>加盟申请信息</title>
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="www/css/common.css">
+    <link rel="stylesheet" href="www/css/mp-common.css">
+    <link rel="stylesheet" href="www/css/cooperator-list.css">
+
+</head>
+<body>
+    <aside></aside>
+    <header></header>
+
+    <!--main box start-->
+    <div class="main-box form-inline" id="mainBox">
+        <div class="main-top" id="mainTop">
+            <!--nav start-->
+            <div id="navBox">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#">加盟申请信息列表</a></li>
+                </ul>
+            </div>
+            <!--nav end-->
+        </div>
+        <!--main top end-->
+
+        <!--main content start-->
+        <div class="main-content" id="mainContent">
+            <ul class="list-head"></ul>
+            <ul class="list-content" id="cooperatorList"></ul>
+
+            <!--pager start-->
+            <div class="nav-page" id="pageNav"></div>
+            <!--pager end-->
+        </div>
+        <!--main content end-->
+    </div>
+    <!--main box end-->
+
+    <script data-main="script/cooperators/app" src="lib/requirejs/require.js"></script>
+</body>
+</html>

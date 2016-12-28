@@ -1,0 +1,111 @@
+$bgColor: #EEEEEE;
+$blackColor: #000;
+$whiteColor: #FFF;
+$borderColor: #D0D0D0;
+$yelloColor: #F79321;
+
+$maxWidth: 500px;
+$headImgHeight: 50px;
+$liPaddingTop: 15px;
+$liPaddingLeft: 5%;
+$liLineHeight: 20px;
+$noteHeight: 14px;
+$noteWidth: 10px;
+
+@mixin boxBlock(){
+  position: relative;
+  margin:0 auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1), 0 -1px 5px rgba(0,0,0,0.05);
+}
+
+body {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: $maxWidth;
+  background-color: $bgColor;
+  font-family: "黑体";
+}
+
+.account-set-page {
+
+  .set-list {
+
+    padding-top: 10px;
+
+    ul {
+      @include boxBlock;
+
+      li {
+        position: relative;
+        padding: $liPaddingTop $liPaddingLeft;
+        background-color: $whiteColor;
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+        overflow: hidden;
+        &:after {
+          content: '';
+          position: absolute;
+          top:  ( $liLineHeight - $noteHeight ) / 2 + $liPaddingTop;
+          right: 10px;
+          width: $noteWidth;
+          height: $noteHeight;
+          background: url("../image/yizu-icon.svg") 400-370px 360-140px;
+        }
+
+        a {
+          display: block;
+          color: $blackColor;
+          line-height: $liLineHeight;
+          img {
+            float: right;
+            display: inline-block;
+            margin-right: $noteWidth+10px;
+            width: $headImgHeight;
+            height: $headImgHeight;
+            border-radius: 50%;
+            vertical-align: middle;
+          }
+        }
+      }
+
+      li:first-child {
+        &:after {
+          top: ( $headImgHeight - $noteHeight ) / 2 + $liPaddingTop;
+        }
+        a span {
+          line-height: $headImgHeight;
+        }
+      }
+
+    }
+  }
+
+  .confirm-set {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    p {
+      margin: 0 auto;
+      padding: 0 $liPaddingLeft;
+      width: 100%;
+      max-width: $maxWidth;
+      box-sizing: border-box;
+      a {
+        display: block;
+        margin: 10px auto;
+        height: 36px;
+        text-align: center;
+        background-color: $yelloColor;
+        line-height: 36px;
+        color: $whiteColor;
+        border-radius: 2px;
+        box-shadow: 0 1px 3px $yelloColor / 1.2 , 0 -1px 3px $yelloColor * 1.2;
+      }
+    }
+  }
+}
